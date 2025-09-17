@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Sunk Robotics{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Optional: your custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <!-- Replace with your logo SVG or image -->
+        <img src="{{ url_for('static', filename='img/SunkWTlogo.svg') }}" alt="Sunk Robotics Logo" height="100">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:white;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Projects</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+  <!-- Footer with Boat SVG -->
+  <footer class="footer-boat">
+    <!-- Insert the boat SVG here -->
+    <div class="boat-svg">
+      <!-- Example: -->
+
+    </div>
+    <div class="footer-content text-center">
+      <div class="container">
+        <p>&copy; 2025 Sunk Robotics. All rights reserved.</p>
+        <p><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (Popper + JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

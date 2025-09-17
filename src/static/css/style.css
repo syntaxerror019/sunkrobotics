@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+    :root {
+      --ocean-blue: #0077be;
+      --dark-blue: #005f8d;
+      --light-blue: #a6dcef;
+      --accent-color: #00bcd4;
+      --hover-color: #004a70;
+    }
+    body {
+      color: #333;
+    }
+    .raleway-font {
+        font-family: "Raleway", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 100;
+        font-style: normal;
+    }
+    .spacer {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .navbar {
+      background-color: #0a2540;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    .hero {
+      background: linear-gradient(90deg, #0a2540 60%, #0a2540 100%);
+      color: white;
+      padding: 8rem 0;
+      text-align: center;
+      font-family: "Raleway", sans-serif;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .feature-icon {
+      font-size: 4rem;
+      color: var(--accent-color);
+    }
+    .footer-boat {
+      background: var(--dark-blue);
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+    .footer-boat svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      /* You might need to adjust the viewBox and preserveAspectRatio in your SVG */
+    }
+    .footer-content {
+      padding: 4rem 0 1rem 0;
+    }
+    .footer-image {
+      max-width: 100px;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    /* Timeline wrapper */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 800px;
+}
+
+/* Vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #0077be; /* ocean blue */
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Circle markers */
+.timeline-marker {
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #0077be;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.right .timeline-marker {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+/* Responsive for small screens */
+@media (max-width: 767px) {
+  .timeline::before {
+    left: 8px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    text-align: left;
+  }
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+  .timeline-marker {
+    left: 0;
+    transform: translateX(-50%);
+  }
+}
+   
