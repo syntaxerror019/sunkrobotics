@@ -108,6 +108,11 @@
       overflow: hidden;
       padding: 1rem 0;
     }
+    .footer-boat a i {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+    }
     .footer-sunk {
       display: flex;
       justify-content: center;
@@ -120,6 +125,13 @@
       max-width: 100px;
       margin-bottom: 1rem;
       color: white;
+    }
+    .img-fluid {
+      max-height: 600px;
+    }
+    .btn {
+      background-color: var(--bars);
+      border-color: var(--bars);
     }
 
     /* Timeline wrapper */
@@ -203,6 +215,9 @@
   .timeline-marker {
     left: 0;
     transform: translateX(-50%);
+  }
+  #mainNav img {
+      height: 70px;
   }
 }
    

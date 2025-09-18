@@ -14,8 +14,11 @@
   <title>{% block title %}Sunk Robotics{% endblock %}</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <!-- Optional: your custom CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -55,6 +58,17 @@
     <div class="footer-content text-center">
       <div class="container">
         <p>&copy; 2025 Sunk Robotics. All rights reserved.</p>
+        <div class="social-icons d-flex justify-content-center gap-3 mt-4">
+          <a href="https://instagram.com/sunkrobotics" target="_blank" class="text-white fs-3">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://github.com/sunk-robotics" target="_blank" class="text-white fs-3">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/sunk-robotics/" target="_blank" class="text-white fs-3">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
       </div>
     </div>
   </footer>

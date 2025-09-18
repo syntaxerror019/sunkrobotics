@@ -24,34 +24,33 @@
     <!-- Who We Are -->
     <div class="mb-5">
       <h2 class="display-4 fw-bold mb-4">Who We Are</h2>
-      <p class="lead mx-auto">
+      <p class="lead mx-auto" style="max-width: 700px;">
         We're Sunk Robotics, a student-run robotics team based in Medford, Massachusetts.
         Our team is passionate about underwater engineering, hands-on design, and pushing
         the limits of robotics. Collaboration and innovation drive everything we do.
       </p>
-      <img src="team_photo.jpg" alt="Team Photo" class="img-fluid rounded shadow mt-4" style="max-width: 800px;">
+      <img src="{{ url_for('static', filename='img/team.webp') }}" alt="Team Photo" class="img-fluid rounded mt-4">
     </div>
 
     <!-- What We Do -->
     <div class="mb-5">
       <h2 class="display-4 fw-bold mb-4">What We Do</h2>
       <p class="lead mx-auto" style="max-width: 700px;">
-        From building Remote Operated Vehicles (ROVs) to exploring renewable power systems,
-        we design and fabricate technology for real-world challenges. Each project helps us
-        learn new skills while contributing to robotics innovation.
+        From building Remote Operated Vehicles (ROVs) to developing and testing new robotic solutions,
+        we design and fabricate technology for real-world challenges. Each project meets new criteria and overcomes different challenges.
       </p>
-      <img src="projects_photo.jpg" alt="Projects Photo" class="img-fluid rounded shadow mt-4" style="max-width: 800px;">
+      <img src="{{ url_for('static', filename='img/debug.webp') }}" alt="Projects Photo" class="img-fluid rounded mt-4">
     </div>
 
     <!-- Our History -->
     <div class="mb-5">
       <h2 class="display-4 fw-bold mb-4">Our History</h2>
       <p class="lead mx-auto" style="max-width: 700px;">
-        Since our founding in November of 2021, Sunk Robotics has developed multiple
+        Since our founding in November of 2020, Sunk Robotics has developed multiple
         underwater engineering solutions. Our current lineup includes STEVE ROV, JENA float,
-        JONA ROV, and we are currently developing ROV 2026.
+        JONA ROV, and we are currently developing our latest ROV 2026 (BOB ROV).
       </p>
-      <img src="history_photo.jpg" alt="History Photo" class="img-fluid rounded shadow mt-4" style="max-width: 800px;">
+      <img src="{{ url_for('static', filename='img/history.webp') }}" alt="History Photo" class="img-fluid rounded mt-4">
     </div>
   </div>
 </section>
@@ -65,26 +64,26 @@
     <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jona.png') }}" class="img-fluid rounded" alt="Product 1">
+        <img src="{{ url_for('static', filename='img/jona.png') }}" class="img-fluid rounded" alt="Jona ROV">
       </div>
       <div class="col-md-6">
         <h3>JONA ROV</h3>
         <p class="lead">
-          Meet JONA, Sunk Robotics’ newest ROV.
-Created for the 2024 MATE ROV, and
-modified for the 2025 competition, JONA
-ROV brings a whole new frame, a PCB-
-based electronics system, and overall
-improved manuverability.
+          Meet JONA, Sunk Robotics' newest ROV.
+          Created for the 2024 MATE ROV, and
+          modified for the 2025 competition, JONA
+          ROV brings a whole new frame, a PCB-
+          based electronics system, and overall
+          improved manuverability.
         </p>
-        <a href="#" class="btn btn-primary btn-lg">Learn More</a>
+        <a href="/jona" class="btn btn-primary btn-lg">Learn More</a>
       </div>
     </div>
 
     <!-- Product 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <img src="product2.jpg" class="img-fluid rounded shadow" alt="Product 2">
+        <img src="{{ url_for('static', filename='img/float.png') }}" class="img-fluid rounded" alt="Sunk Robotics' Float v1">
       </div>
       <div class="col-md-6">
         <h3>Product Name 2</h3>
@@ -99,7 +98,7 @@ improved manuverability.
     <!-- Product 3 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="product3.jpg" class="img-fluid rounded shadow" alt="Product 3">
+        <img src="{{ url_for('static', filename='img/steve.png') }}" class="img-fluid rounded" alt="Steve ROV">
       </div>
       <div class="col-md-6">
         <h3>Product Name 3</h3>
@@ -123,64 +122,36 @@ improved manuverability.
       <div class="timeline-item left">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <h5>2019 – The Beginning</h5>
-          <p>Founded by a group of passionate students starting their adventure in robotics.</p>
+          <h5>2020 – The Beginning</h5>
+          <p>Sunk Robotics was founded by a group of passionate engineering student that were part of the <a href="https://mvthsengineering.com/" target="_blank"></a>MVTHS Engineering & Robotics shop</p> in Medford High School.
         </div>
       </div>
       <!-- Timeline Item 2 -->
       <div class="timeline-item right">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <h5>2020 – First ROV</h5>
-          <p>Built and tested our first Remote Operated Vehicle for competition use.</p>
+          <h5>2022 – First ROV</h5>
+          <p>Built and tested our first Remote Operated Vehicle (STEVE ROV) for competition use in the 2022 <a href="https://www.materov.org/" target="_blank">MATE ROV Competition</a> to represent our school.</p>
         </div>
       </div>
       <!-- Timeline Item 3 -->
       <div class="timeline-item left">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <h5>2022 – Competitions</h5>
-          <p>Represented our school at the MATE ROV Competition, gaining recognition for creativity and skill.</p>
+          <h5>2024 – World Champions</h5>
+          <p>In 2024, Sunk Robotics <a href="https://20693798.fs1.hubspotusercontent-na1.net/hubfs/20693798/2024_MATE_World_Championship_Scores_Ranger_Class%20(1).pdf">placed 9th in the International ROV Competition</a> and won the NE MATE ROV Regional. </p>
         </div>
       </div>
       <!-- Timeline Item 4 -->
       <div class="timeline-item right">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
-          <h5>2024 – Growth</h5>
-          <p>Expanded projects into renewable energy systems and advanced robotics.</p>
+          <h5>2025 – Growth</h5>
+          <p>The team has decided to part ways from MATE ROV and focus on our latest ROV 2026 (BOB ROV) designed to complete deep-sea educational and experimental missions.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-  <!-- Contact / Call to Action -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="mb-4 text-center">Get in Touch</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your name">
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="How can we help?"></textarea>
-            </div>
-            <div class="text-center">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
 {% endblock %}
