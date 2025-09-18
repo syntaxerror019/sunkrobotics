@@ -9,25 +9,44 @@
       <p class="lead text-center">Have questions? We'd love to hear from you! <br> Feel free to email us at <a href="mailto:sunk@sunkrobotics.com">sunk@sunkrobotics.com</a>. <br>We look forward to connecting with you!</p>
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form>
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="7e09f262-005d-4471-b791-32196ea4d58b">
+
+            <!-- Name -->
             <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your name">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
             </div>
+
+            <!-- Email -->
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
             </div>
+
+            <!-- Message -->
             <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="How can we help?"></textarea>
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" placeholder="What's on your mind?" required></textarea>
             </div>
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+
+            <!-- Custom Confirmation / Success Page (optional) -->
+            <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+            <!-- Submit Button -->
             <div class="text-center">
-              <button type="submit" class="btn btn-primary">Reach Out!</button>
+                <button type="submit" class="btn btn-primary">Reach Out!</button>
             </div>
-          </form>
+
+            </form>
         </div>
-      </div>
+        </div>
+
     </div>
   </section>
 

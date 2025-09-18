@@ -4,10 +4,12 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="{{ url_for('static', filename='video/videoplayback.mp4') }}" type="video/mp4">
-    <!-- You can add a webm/ogg fallback too -->
-  </video>
+<video autoplay muted loop playsinline class="hero-video"
+       poster="{{ url_for('static', filename='video/poster.png') }}">
+  <source src="{{ url_for('static', filename='video/videoplayback.mp4') }}" type="video/mp4">
+  <!-- You can add a webm/ogg fallback too -->
+</video>
+
 
   <div class="hero-content">
     <h1 class="display-4">
@@ -57,9 +59,9 @@
 
 
 <!-- Products / Showcase Section -->
-<section id="products" class="py-5 bg-light">
+<section id="robots" class="py-5 bg-light">
   <div class="container">
-    <h2 class="mb-5 text-center">Our Robots</h2>
+    <h1 class="mb-5 text-center">The Robots</h1>
 
     <!-- Product 1 -->
     <div class="row align-items-center mb-5">
@@ -86,10 +88,9 @@
         <img src="{{ url_for('static', filename='img/float.png') }}" class="img-fluid rounded" alt="Sunk Robotics' Float v1">
       </div>
       <div class="col-md-6">
-        <h3>Product Name 2</h3>
+        <h3>JENA Float</h3>
         <p class="lead">
-          Another highlight here — maybe focus on technical innovation,
-          sustainability, or performance.
+          A vertically profiling robot designed to autonomously collect data from various depths in the ocean. Being revision two, this design includes a completely overhauled electronics system and a much more modern and controllable User Interface (UI).
         </p>
         <a href="#" class="btn btn-primary btn-lg">Learn More</a>
       </div>
@@ -101,10 +102,9 @@
         <img src="{{ url_for('static', filename='img/steve.png') }}" class="img-fluid rounded" alt="Steve ROV">
       </div>
       <div class="col-md-6">
-        <h3>Product Name 3</h3>
+        <h3>STEVE ROV</h3>
         <p class="lead">
-          Describe the key features, use cases, and customer value.
-          Keep it simple, punchy, and visually inviting.
+          Version one of Sunk Robotics' competing robots. This design includes dual feed cameras along with a lightweight tether reducing drag. With 6 thrusters, it is capable of moving in 4 degrees of freedom.
         </p>
         <a href="#" class="btn btn-primary btn-lg">Learn More</a>
       </div>

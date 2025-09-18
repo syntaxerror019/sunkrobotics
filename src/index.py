@@ -14,5 +14,13 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/sponsors')
+def sponsors():
+    return render_template('sponsors.html')
+
+@app.route('/robots/jona')
+def jona():
+    return render_template('jona.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

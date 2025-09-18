@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Output / Slideshow Section -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold mb-5">Our Journey & Projects</h2>
+
+    <div id="outputCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='img/rotary/1.webp') }}" class="d-block w-100 rounded" alt="Team Photo">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Who We Are</h5>
+            <p>We're Sunk Robotics, a student-run robotics team based in Medford, Massachusetts.</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='img/rotary/2.webp') }}" class="d-block w-100 rounded" alt="Projects Photo">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>What We Do</h5>
+            <p>From building ROVs to testing new robotic solutions, we tackle real-world challenges.</p>
+          </div>
+        </div>
+
+                <div class="carousel-item">
+          <img src="{{ url_for('static', filename='img/rotary/4.webp') }}" class="d-block w-100 rounded" alt="History Photo">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Our History</h5>
+            <p>Since 2020, we've developed multiple underwater engineering solutions including STEVE, JENA, and JONA ROVs.</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='img/rotary/3.webp') }}" class="d-block w-100 rounded" alt="Locations Photo">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Where We've Been</h5>
+            <p>We were invited to the ribbon cutting of MITRE's new R&D pool and demonstrated our robots.</p>
+          </div>
+        </div>
+
+                <div class="carousel-item">
+          <img src="{{ url_for('static', filename='img/rotary/5.webp') }}" class="d-block w-100 rounded" alt="Accomplishments Photo">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h5>Accomplishments</h5>
+            <p>We have competed in several MATE ROV competitions, including regionals and world championships.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#outputCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#outputCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <!-- Indicators -->
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#outputCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+        <button type="button" data-bs-target="#outputCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#outputCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#outputCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#outputCarousel" data-bs-slide-to="4"></button>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Team / Employees Section -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold mb-5">Meet Our Team</h2>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Employee 1 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/1/200" class="card-img-top rounded-circle" alt="Alice Johnson">
+          <div class="card-body">
+            <h5 class="card-title">Miles Hilliard</h5>
+            <p class="card-text text-muted">Electrical Engineer Lead - 2027</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 2 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/2/200" class="card-img-top rounded-circle" alt="Ben Smith">
+          <div class="card-body">
+            <h5 class="card-title">Timothy Hunt</h5>
+            <p class="card-text text-muted">Mechanical Engineer - 2027</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 3 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/3/200" class="card-img-top rounded-circle" alt="Clara Lee">
+          <div class="card-body">
+            <h5 class="card-title">Jonas Wirz</h5>
+            <p class="card-text text-muted">Pilot - 2027</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 4 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/4/200" class="card-img-top rounded-circle" alt="David Nguyen">
+          <div class="card-body">
+            <h5 class="card-title">Ibrahim Ahmad</h5>
+            <p class="card-text text-muted">Mechanical Engineer - 2028</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 5 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/5/200" class="card-img-top rounded-circle" alt="Emily Garcia">
+          <div class="card-body">
+            <h5 class="card-title">Oscar Yeager</h5>
+            <p class="card-text text-muted">Programming Lead - 2028</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 6 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/6/200" class="card-img-top rounded-circle" alt="Frank Li">
+          <div class="card-body">
+            <h5 class="card-title">Frank Li</h5>
+            <p class="card-text text-muted">Design Engineer</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 7 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/7/200" class="card-img-top rounded-circle" alt="Grace Kim">
+          <div class="card-body">
+            <h5 class="card-title">Grace Kim</h5>
+            <p class="card-text text-muted">Research Assistant</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Employee 8 -->
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card border-0">
+          <img src="https://picsum.photos/seed/8/200" class="card-img-top rounded-circle" alt="Henry Davis">
+          <div class="card-body">
+            <h5 class="card-title">Henry Davis</h5>
+            <p class="card-text text-muted">Operations Specialist</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

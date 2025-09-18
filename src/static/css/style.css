@@ -108,10 +108,8 @@
       overflow: hidden;
       padding: 1rem 0;
     }
-    .footer-boat a i {
-      font-size: 2rem;
+    .footer-boat a {
       color: white;
-      text-decoration: none;
     }
     .footer-sunk {
       display: flex;
@@ -132,6 +130,12 @@
     .btn {
       background-color: var(--bars);
       border-color: var(--bars);
+    }
+    /* Carousel images: uniform height and cover */
+    #outputCarousel .carousel-item img {
+      height: 700px;        /* set desired height */
+      object-fit: cover;    /* crop/scale to fill without distortion */
+      width: 100%;          /* full width */
     }
 
     /* Timeline wrapper */
