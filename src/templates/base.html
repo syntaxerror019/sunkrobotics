@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon/favicon.svg') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon/favicon-16x16.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/favicon/android-chrome-192x192.png') }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/favicon/android-chrome-512x512.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='img/favicon/site.webmanifest') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon/favicon.ico') }}">
   <title>{% block title %}Sunk Robotics{% endblock %}</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,9 +20,9 @@
 <body>
 
   <!-- Header / Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav id="mainNav" class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/#">
         <!-- Replace with your logo SVG or image -->
         <img src="{{ url_for('static', filename='img/SunkWTlogo.svg') }}" alt="Sunk Robotics Logo" height="100">
       </a>
@@ -24,11 +32,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item h4 spacer"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Products</a></li>
-          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Projects</a></li>
-          <li class="nav-item h4 spacer"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="/#">Home</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#robots">Robots</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="#sponsors">Sponsors</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -40,15 +48,13 @@
 
   <!-- Footer with Boat SVG -->
   <footer class="footer-boat">
-    <!-- Insert the boat SVG here -->
-    <div class="boat-svg">
-      <!-- Example: -->
-
-    </div>
+    <a class="footer-sunk" href="/#">
+        <!-- Replace with your logo SVG or image -->
+        <img src="{{ url_for('static', filename='img/SunkWTlogo.svg') }}" alt="Sunk Robotics Logo" height="100">
+      </a>
     <div class="footer-content text-center">
       <div class="container">
         <p>&copy; 2025 Sunk Robotics. All rights reserved.</p>
-        <p><a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Terms of Service</a></p>
       </div>
     </div>
   </footer>
@@ -56,4 +62,15 @@
   <!-- Bootstrap JS (Popper + JS) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script>
+  window.addEventListener("scroll", function () {
+    const nav = document.getElementById("mainNav");
+    if (window.scrollY > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
+</script>
+
 </html>

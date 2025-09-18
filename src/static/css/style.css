@@ -6,6 +6,8 @@
       --light-blue: #a6dcef;
       --accent-color: #00bcd4;
       --hover-color: #004a70;
+      --new-color: #0a2540;
+      --bars: #004080;
     }
     body {
       color: #333;
@@ -21,41 +23,98 @@
         margin-right: 10px;
     }
     .navbar {
-      background-color: #0a2540;
+      background-color: var(--bars); 
+      position: sticky;
+      top: 0;
+      z-index: 2;
     }
     .navbar-brand, .nav-link {
       color: white !important;
     }
+    /* Default navbar style */
+    #mainNav {
+      transition: all 0.3s ease;
+    }
+
+    #mainNav img {
+      height: 100px;
+      transition: height 0.3s ease;
+    }
+
+    /* When scrolled */
+    #mainNav.scrolled {
+      padding-top: 0.3rem !important;
+      padding-bottom: 0.3rem !important;
+      background-color: #004080 !important; /* darker shade on scroll */
+    }
+
+    #mainNav.scrolled img {
+      height: 60px;
+      transition: height 0.3s ease;
+    }
     .hero {
-      background: linear-gradient(90deg, #0a2540 60%, #0a2540 100%);
-      color: white;
-      padding: 8rem 0;
-      text-align: center;
-      font-family: "Raleway", sans-serif;
-      height: 90vh;
+      position: relative;
+      height: calc(100vh - 100px);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      color: white;
     }
+
+    /* Video styling */
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* Text content */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    /* Optional: dark overlay for better text readability */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 37, 64, 0.7);
+      z-index: 0;
+    }
+
     .feature-icon {
       font-size: 4rem;
       color: var(--accent-color);
     }
     .footer-boat {
-      background: var(--dark-blue);
+      background: var(--bars);
       position: relative;
       color: white;
       overflow: hidden;
+      padding: 1rem 0;
     }
-    .footer-boat svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      /* You might need to adjust the viewBox and preserveAspectRatio in your SVG */
+    .footer-sunk {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .footer-content {
-      padding: 4rem 0 1rem 0;
+      padding: 0;
     }
     .footer-image {
       max-width: 100px;

@@ -2,67 +2,61 @@
 
 {% block content %}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="display-4">Innovating Underwater & Surface Robotics for Industry, Research & Exploration</h1>
-      <p class="lead"></p>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="{{ url_for('static', filename='video/videoplayback.mp4') }}" type="video/mp4">
+    <!-- You can add a webm/ogg fallback too -->
+  </video>
+
+  <div class="hero-content">
+    <h1 class="display-4">
+      Innovating Underwater & Surface Robotics for Industry, Research & Exploration
+    </h1>
+    <p class="lead"></p>
+  </div>
+</section>
+
 
 <!-- About / Info Section -->
-<section class="py-5">
-  <div class="container">
+<section class="py-5 bg-light">
+  <div class="container text-center">
     <!-- Who We Are -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <h2>Who We Are</h2>
-        <p>
-          We’re Sunk Robotics, a student-run robotics team based in Medford, Massachusetts.
-          Our team is passionate about underwater engineering, hands-on design, and pushing
-          the limits of robotics. Collaboration and innovation drive everything we do.
-        </p>
-      </div>
-      <div class="col-md-6 text-center">
-        <!-- Replace with your SVG/icon/image -->
-        <div class="feature-icon mb-3 display-1">🤖</div>
-      </div>
+    <div class="mb-5">
+      <h2 class="display-4 fw-bold mb-4">Who We Are</h2>
+      <p class="lead mx-auto">
+        We're Sunk Robotics, a student-run robotics team based in Medford, Massachusetts.
+        Our team is passionate about underwater engineering, hands-on design, and pushing
+        the limits of robotics. Collaboration and innovation drive everything we do.
+      </p>
+      <img src="team_photo.jpg" alt="Team Photo" class="img-fluid rounded shadow mt-4" style="max-width: 800px;">
     </div>
 
     <!-- What We Do -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6 order-md-2">
-        <h2>What We Do</h2>
-        <p>
-          From building Remote Operated Vehicles (ROVs) to exploring renewable power systems,
-          we design and fabricate technology for real-world challenges. Each project helps us
-          learn new skills while contributing to robotics innovation.
-        </p>
-      </div>
-      <div class="col-md-6 order-md-1 text-center">
-        <div class="feature-icon mb-3 display-1">⚙️</div>
-      </div>
+    <div class="mb-5">
+      <h2 class="display-4 fw-bold mb-4">What We Do</h2>
+      <p class="lead mx-auto" style="max-width: 700px;">
+        From building Remote Operated Vehicles (ROVs) to exploring renewable power systems,
+        we design and fabricate technology for real-world challenges. Each project helps us
+        learn new skills while contributing to robotics innovation.
+      </p>
+      <img src="projects_photo.jpg" alt="Projects Photo" class="img-fluid rounded shadow mt-4" style="max-width: 800px;">
     </div>
 
     <!-- Our History -->
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h2>Our History</h2>
-        <p>
-          Since our founding in November of 2021,
-          Sunk Robotics has developed multiple
-          underwater engineering solutions. Our
-          current lineup includes STEVE ROV, JENA
-          float, JONA ROV, and we are currently
-          developing ROV 2026
-        </p>
-      </div>
-      <div class="col-md-6 text-center">
-        <div class="feature-icon mb-3 display-1">📜</div>
-      </div>
+    <div class="mb-5">
+      <h2 class="display-4 fw-bold mb-4">Our History</h2>
+      <p class="lead mx-auto" style="max-width: 700px;">
+        Since our founding in November of 2021, Sunk Robotics has developed multiple
+        underwater engineering solutions. Our current lineup includes STEVE ROV, JENA float,
+        JONA ROV, and we are currently developing ROV 2026.
+      </p>
+      <img src="history_photo.jpg" alt="History Photo" class="img-fluid rounded shadow mt-4" style="max-width: 800px;">
     </div>
   </div>
 </section>
+
+
 <!-- Products / Showcase Section -->
 <section id="products" class="py-5 bg-light">
   <div class="container">
