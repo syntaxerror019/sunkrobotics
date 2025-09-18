@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Products / Showcase Section -->
+<section id="robots" class="py-5 bg-light">
+  <div class="container">
+    <h1 class="mb-5 text-center">The Robots</h1>
+
+    <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/jona.png') }}" class="img-fluid rounded img-product-large" alt="Jona ROV">
+      </div>
+      <div class="col-md-6">
+        <h3>JONA ROV</h3>
+        <p class="lead">
+          JONA ROV is a next-generation underwater vehicle designed to thrive in demanding environments. Every detail was shaped by real pilot feedback, making it both powerful and intuitive to operate. The electronics inside JONA ROV were built from the ground up to be modular, reliable, and future-proof. Instead of relying on generic parts, the team designed custom circuit boards and a unique “electronics skeleton” that keeps everything organized, serviceable, and easy to upgrade.
+        </p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/jona/guard.webp') }}" class="img-fluid rounded img-product" alt="Guard">
+      </div>
+      <div class="col-md-6">
+        <h3>Custom Thruster Guards</h3>
+        <p class="lead">
+          Custom-designed guards for the thrusters of the JONA ROV, ensuring protection and durability during operations.
+        </p>
+      </div>
+    </div>
+
+      <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/jona/gripper.webp') }}" class="img-fluid rounded img-product" alt="Gripper">
+      </div>
+      <div class="col-md-6">
+        <h3>Mechanical Gripper</h3>
+        <p class="lead">
+            A custom-designed mechanical gripper for the JONA ROV, allowing for precise manipulation and handling of objects underwater.
+        </p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/jona/fork.webp') }}" class="img-fluid rounded img-product" alt="Fork">
+      </div>
+      <div class="col-md-6">
+        <h3>Static Manipulator</h3>
+        <p class="lead">
+          Custom-designed static manipulator for the JONA ROV, ensuring precise handling and manipulation of objects during operations.
+        </p>
+      </div>
+    </div>
+
+      <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/jona/tube.webp') }}" class="img-fluid rounded img-product" alt="Tube Cameras">
+      </div>
+      <div class="col-md-6">
+        <h3>Modular Tube Cameras</h3>
+        <p class="lead">
+            Modular tube cameras for the JONA ROV, providing enhanced visibility and monitoring capabilities in underwater environments.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<div class="row justify-content-center mb-5">
+    <div class="col-12">
+        <div class="ratio ratio-16x9">
+            <iframe src="https://medford52.autodesk360.com/shares/public/SH30dd5QT870c25f12fc1fb2ed57ddc20beb?mode=embed"
+                allowfullscreen
+                frameborder="0"
+                style="width:100%;height:100%;min-height:400px;">
+            </iframe>
+        </div>
+    </div>
+</div>
+</section>
+
+
+{% endblock %}

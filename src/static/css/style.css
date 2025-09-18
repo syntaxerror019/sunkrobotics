@@ -26,7 +26,7 @@
       background-color: var(--bars); 
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 9;
     }
     .navbar-brand, .nav-link {
       color: white !important;
@@ -127,6 +127,12 @@
     .img-fluid {
       max-height: 600px;
     }
+    .img-product {
+      max-width: 300px !important;
+    }
+    .img-product-large {
+      max-width: 600px !important;
+    }
     .btn {
       background-color: var(--bars);
       border-color: var(--bars);
@@ -136,6 +142,9 @@
       height: 700px;        /* set desired height */
       object-fit: cover;    /* crop/scale to fill without distortion */
       width: 100%;          /* full width */
+    }
+    .large-button {
+        transform: scale(2.2);
     }
 
     /* Timeline wrapper */

@@ -18,9 +18,17 @@ def contact():
 def sponsors():
     return render_template('sponsors.html')
 
-@app.route('/robots/jona')
+@app.route('/jona')
 def jona():
     return render_template('jona.html')
+
+@app.route('/jena')
+def jena():
+    return render_template('jena.html')
+
+@app.route('/steve')
+def steve():
+    return render_template('steve.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
