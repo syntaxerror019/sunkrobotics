@@ -2,23 +2,20 @@ This is the official repository of Sunk Robotics (sunkrobotics.com)
 
 This project and all subsequent files and code are licensed under the [Apache License](LICENSE).
 
-### Changelog
 
-* 2022-02-10: Added support for new API endpoint
-* 2021-12-15: Fixed bug causing issues with data processing
+# Deployments
 
-### Deployments
 Official Site: https://sunkrobotics.com/
 Unofficial Debug Site: https://sunkrobotics.vercel.app/
 
 
-### Running locally
+# Running locally
 
 1) Clone repository locally
 2) Install Python3 & Flask
 3) Run with `flask run` or simply execute app.py under src/ directory.
 
 
-### Contributing
+# Contributing
 
 If you notice any mistakes, including typos or inaccurate information, please open an Issue on this repository.
