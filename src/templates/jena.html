@@ -5,17 +5,17 @@
 <!-- Products / Showcase Section -->
 <section id="robots" class="py-5 bg-light">
   <div class="container">
-    <h1 class="text-center mb-5">JONA ROV and Accessories</h1>
+    <h1 class="text-center mb-5">JENA Float</h1>
 
     <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jona.png') }}" class="img-fluid rounded" style="max-width: 500px;" alt="Jona ROV">
+        <img src="{{ url_for('static', filename='img/jena/full.webp') }}" class="img-fluid rounded" style="max-width: 400px;" alt="Jona ROV">
       </div>
       <div class="col-md-6">
         <h3>Overview</h3>
         <p class="lead">
-          JONA ROV is a next-generation underwater vehicle designed to thrive in demanding environments. Every detail was shaped by real pilot feedback, making it both powerful and intuitive to operate. The electronics inside JONA ROV were built from the ground up to be modular, reliable, and future-proof. Instead of relying on generic parts, the team designed custom circuit boards and a unique “electronics skeleton” that keeps everything organized, serviceable, and easy to upgrade.
+          JENA Float is a state-of-the-art, vertically profiling autonomous robot designed to collect critical oceanographic data from the surface down to great depths. Built as part of the GO-BGC (Global Ocean Biogeochemistry Array) initiative, JENA Float aims to help researchers monitor and understand the chemistry, biology, and physics of the global ocean in real time. Unlike traditional floats, JENA was engineered with real-world usability at its core. It features a next-generation PCB system, improving reliability, modularity, and serviceability in the field.
         </p>
       </div>
     </div>
@@ -23,12 +23,12 @@
     <!-- Product 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jona/guard.webp') }}" class="img-fluid rounded" style="max-width: 250px;" alt="Guard">
+        <img src="{{ url_for('static', filename='img/jena/base.webp') }}" class="img-fluid rounded" style="max-width: 800px;" alt="Guard">
       </div>
       <div class="col-md-6">
-        <h3>Custom Thruster Guards</h3>
+        <h3>Advanced Buoyancy Engine</h3>
         <p class="lead">
-          Custom-designed guards for the thrusters of the JONA ROV, ensuring protection and durability during operations.
+          With a custom designed and manufactured buoyancy engine, JENA is able to control its vertical position within the water column. The motor driven piston is equipped with a high-prevision rotary encoder to adjust its density, allowing it to rise and sink at varying speeds autonomously. To do this, a PID controller is used to determine the ideal piston position location. 
         </p>
       </div>
     </div>
@@ -36,12 +36,12 @@
       <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jona/gripper.webp') }}" class="img-fluid rounded" style="max-width: 300px;" alt="Gripper">
+        <img src="{{ url_for('static', filename='img/jena/wifi.webp') }}" class="img-fluid rounded" style="max-width: 500px;" alt="Gripper">
       </div>
       <div class="col-md-6">
-        <h3>Mechanical Gripper</h3>
+        <h3>Compatible Communication</h3>
         <p class="lead">
-            A custom-designed mechanical gripper that attaches with a universal receiver for JONA ROV enabling precise manipulation and handling of objects underwater.
+           JENA Float is equipped with an external WiFi antenna that protrudes above the water's surface, allowing the robot to communicate via websockets to an access point located on shore. This AP can be connected to with any WiFi-enabled device, allowing for easy data visualization and control of the robot.
         </p>
       </div>
     </div>
@@ -49,12 +49,12 @@
     <!-- Product 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jona/fork.webp') }}" class="img-fluid rounded" style="max-width: 370px;" alt="Fork">
+        <img src="{{ url_for('static', filename='img/jena/sense.webp') }}" class="img-fluid rounded" style="max-width: 600px;" alt="Fork">
       </div>
       <div class="col-md-6">
-        <h3>Static Manipulator</h3>
+        <h3>Pressure Sensors</h3>
         <p class="lead">
-            In addition to the mechanical gripper, a lightweight static fork was designed. This fork uses the same universal receiver as the gripper, allowing for quick and easy tool changes on the go.
+            The onboard pressure sensor can accurately measure the depth and pressure of the water column, providing critical data for scientific research and environmental monitoring. This can be accessed remotely via the web interface, allowing for real-time data analysis and decision-making.
         </p>
       </div>
     </div>
@@ -62,38 +62,25 @@
       <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jona/tube.webp') }}" class="img-fluid rounded" style="max-width: 350px;" alt="Tube Cameras">
+        <img src="{{ url_for('static', filename='img/jena/ui.webp') }}" class="img-fluid rounded" style="max-width: 600px;" alt="Tube Cameras">
       </div>
       <div class="col-md-6">
-        <h3>Modular Tube Cameras</h3>
+        <h3>Advanced UI</h3>
         <p class="lead">
-            Two modular tube cameras for JONA ROV provide enhanced visibility and monitoring capabilities in underwater environments. Each camera is modular and operates independently, allowing for flexible configurations based on mission requirements.
+            The on-shore access point hosts a easy-to-use and intuitive web interface that allows users to remotely control the robot, view real-time data, and access advanced features such as remote monitoring and data analysis. The interface is hosted locally, removing the need for an internet connection.
         </p>
       </div>
     </div>
   </div>
 
-
-
-    <h1 class="text-center mb-5">3D Model</h1>
-
-<div class="row justify-content-center mb-5">
-  <div class="col-12 d-flex justify-content-center">
-    <div class="ratio ratio-16x9" style="width: 70%; min-width: 320px; max-width: 900px;">
-      <iframe src="https://medford52.autodesk360.com/shares/public/SH30dd5QT870c25f12fc1fb2ed57ddc20beb?mode=embed"
-        allowfullscreen
-        frameborder="0"
-        style="width:100%;height:100%;min-height:400px;">
-      </iframe>
-    </div>
-  </div>
-</div>
-
-  <p class="text-center">
-    <a href="{{ url_for('static', filename='img/jona/REGIONAL_MedfordVocTech_Sunk Robotics_Technical_Documentation_2025.pdf') }}" target="_blank" class="btn btn-primary btn-lg">
+  <div class="d-flex justify-content-center">
+    <a href="{{ url_for('static', filename='img/jena/ds.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
       View Technical Documentation (PDF)
     </a>
-  </p>
+    <a href="{{ url_for('static', filename='img/jena/sid.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
+      View SID (PDF)
+    </a>
+  </div>
 </section>
 
 

@@ -26,7 +26,7 @@ body {
   background-color: var(--bars); 
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 9;
 }
 .navbar-brand, .nav-link {
   color: white !important;
@@ -96,7 +96,7 @@ body {
   position: relative;
   color: white;
   overflow: hidden;
-  padding: 1rem 0;
+  
 }
 .footer-boat a {
   color: white;
@@ -106,13 +106,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+.footer-sunk img {
+  max-width: 300px;
+}
 .footer-content {
   padding: 0;
-}
-.footer-image {
-  max-width: 100px;
-  margin-bottom: 1rem;
-  color: white;
 }
 .img-fluid {
   max-height: 600px;
@@ -195,6 +193,21 @@ body {
 .timeline-item.right .timeline-marker {
   left: 0;
   transform: translateX(-50%);
+}
+.ad {
+  font-size: 1rem;
+}
+.scroll-down-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-decoration: none;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(10px);}
 }
 /* Responsive for small screens */
 @media (max-width: 767px) {
