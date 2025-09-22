@@ -1,15 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <!-- Hero Section -->
 <section class="hero">
-<video autoplay muted loop playsinline class="hero-video"
-       poster="{{ url_for('static', filename='video/poster.png') }}">
-  <source src="{{ url_for('static', filename='video/videoplayback.mp4') }}" type="video/mp4">
-  <!-- You can add a webm/ogg fallback too -->
-</video>
-
+  <video autoplay muted loop playsinline class="hero-video"
+         poster="{{ url_for('static', filename='video/poster.png') }}">
+    <source src="{{ url_for('static', filename='video/videoplayback.mp4') }}" type="video/mp4">
+    <!-- You can add a webm/ogg fallback too -->
+  </video>
 
   <div class="hero-content">
     <h1 class="display-4">
@@ -17,11 +15,20 @@
     </h1>
     <p class="lead"></p>
   </div>
+
+  <!-- Scroll Down Arrow -->
+  <a href="#content" class="scroll-down-arrow" aria-label="Scroll down">
+    <span style="display:inline-block; animation:bounce 1.5s infinite;">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M10 16l10 10 10-10" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </a>
 </section>
 
 
 <!-- About / Info Section -->
-<section class="py-5 bg-light">
+<section id="content" class="py-5 bg-light">
   <div class="container text-center">
     <!-- Who We Are -->
     <div class="mb-5">
@@ -150,6 +157,22 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Sponsors Section -->
+<section id="sponsors" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="display-4 fw-bold mb-4">Our Sponsors</h2>
+    <p class="lead mx-auto" style="max-width: 700px;">
+      From everyone at Sunk Robotics, we would like to give a huge thank you to our sponsors for their continuous and generous support.
+      Without you, we would not be able to do what we do.
+    </p>
+    <img src="{{ url_for('static', filename='img/watts.png') }}" alt="Thank you watts!" class="img-fluid rounded mt-4" style="max-width: 400px;">
+
+    <p class="lead mx-auto mt-4" style="max-width: 700px;">
+      If you like what we do, consider supporting the team with a <a href="/support">simple donation</a> or by <a href="/contact">becoming a sponsor</a>!
+    </p>
   </div>
 </section>
 

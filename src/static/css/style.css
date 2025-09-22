@@ -127,12 +127,6 @@
     .img-fluid {
       max-height: 600px;
     }
-    .img-product {
-      max-width: 300px !important;
-    }
-    .img-product-large {
-      max-width: 600px !important;
-    }
     .btn {
       background-color: var(--bars);
       border-color: var(--bars);
@@ -232,5 +226,18 @@
   #mainNav img {
       height: 70px;
   }
+}
+
+.scroll-down-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-decoration: none;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(10px);}
 }
    
