@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Products / Showcase Section -->
+<section id="robots" class="py-5 bg-light">
+  <div class="container">
+    <h1 class="text-center mb-5">BOB ROV</h1>
+
+    <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/bob/bob.webp') }}" class="img-fluid rounded" style="max-width: 400px;" alt="Bob ROV">
+      </div>
+      <div class="col-md-6">
+        <h3>Overview</h3>
+        <p class="lead">
+          BOB ROV is a state-of-the-art, vertically profiling autonomous robot designed to collect critical oceanographic data from the surface down to great depths. Built as part of the GO-BGC (Global Ocean Biogeochemistry Array) initiative, BOB ROV aims to help researchers monitor and understand the chemistry, biology, and physics of the global ocean in real time. Unlike traditional floats, BOB was engineered with real-world usability at its core. It features a next-generation PCB system, improving reliability, modularity, and serviceability in the field.
+        </p>
+      </div>
+    </div>
+
+  <div class="d-flex justify-content-center">
+    <a href="{{ url_for('static', filename='img/jena/ds.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
+      View Technical Documentation (PDF)
+    </a>
+    <a href="{{ url_for('static', filename='img/jena/sid.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
+      View SID (PDF)
+    </a>
+  </div>
+</section>
+
+
+
+{% endblock %}
