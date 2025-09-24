@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 60 * 60 * 24 * 30  # 30 days
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 60  # 30 days
 
 @app.route('/')
 def home():
