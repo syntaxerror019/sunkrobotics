@@ -138,6 +138,10 @@ body {
   transition: color 0.3s ease;
   text-decoration: none;
 }
+.card-img-top {
+  height: 400px;
+  object-fit: cover;
+}
 .card-title a:hover {
   color: var(--bars);
   cursor: pointer;
