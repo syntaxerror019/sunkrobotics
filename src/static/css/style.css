@@ -197,9 +197,9 @@ body {
   left: 0;
   transform: translateX(-50%);
 }
-.ad {
+/*.ad {
   font-size: 1rem;
-}
+}*/
 .scroll-down-arrow {
   position: absolute;
   left: 50%;
