@@ -205,6 +205,9 @@ body {
   z-index: 2;
   text-decoration: none;
 }
+    .spec-list {
+      font-size: 1.1rem;
+    }
 
 li {
   font-size: 1.2rem;

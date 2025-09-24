@@ -90,13 +90,7 @@
   </div>
 </div>
 
-  <p class="text-center">
-    <button class="btn btn-primary btn-lg specs-button" onclick="toggleSpecs()">
-      View Technical Specifications
-    </button>
-  </p>
-
-  <div id="techSpecs" style="display: none;">
+  <div id="techSpecs">
     <h1 class="text-center mb-5">Technical Specifications</h1>
     <div class="container spec-list">
       <div class="row">
@@ -298,26 +292,6 @@
         <div></div>
   
   </div>
-
-  <style>
-    .spec-list {
-      font-size: 1.1rem;
-    }
-  </style>
-
-  <script>
-    function toggleSpecs() {
-      const specs = document.getElementById('techSpecs');
-      const button = document.querySelector('.specs-button');
-      if (specs.style.display === 'none') {
-        specs.style.display = 'block';
-        button.style.display = 'none';
-      } else {
-        specs.style.display = 'none';
-        button.style.display = 'block';
-      }
-    }
-  </script>
 </section>
 
 
