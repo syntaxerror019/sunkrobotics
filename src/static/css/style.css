@@ -160,7 +160,7 @@ body {
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: #0077be; 
+  background-color: var(--bars); 
 }
 .timeline-item {
   position: relative;
