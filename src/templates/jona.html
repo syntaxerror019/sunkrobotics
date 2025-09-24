@@ -70,6 +70,7 @@
             Two modular tube cameras for JONA ROV provide enhanced visibility and monitoring capabilities in underwater environments. Each camera is modular and operates independently, allowing for flexible configurations based on mission requirements.
         </p>
       </div>
+   
     </div>
   </div>
 
@@ -90,10 +91,233 @@
 </div>
 
   <p class="text-center">
-    <a href="{{ url_for('static', filename='img/jona/REGIONAL_MedfordVocTech_Sunk Robotics_Technical_Documentation_2025.pdf') }}" target="_blank" class="btn btn-primary btn-lg">
-      View Technical Documentation (PDF)
-    </a>
+    <button class="btn btn-primary btn-lg specs-button" onclick="toggleSpecs()">
+      View Technical Specifications
+    </button>
   </p>
+
+  <div id="techSpecs" style="display: none;">
+    <h1 class="text-center mb-5">Technical Specifications</h1>
+    <div class="container spec-list">
+      <div class="row">
+        <div class="col-12">
+          <h3 style="margin-bottom: 20px;">Hardware Overview</h3>
+          <h5>Design Philosophy</h5>
+          <ul class="list-style-type; circle;">
+            <li>JONA ROV was conceived as a next‑generation underwater platform, engineered to balance performance, resilience, and adaptability.</li>
+            <li>Six guiding goals shaped the design process: neutral buoyancy, six degrees of freedom, corrosion resistance, extreme resilience, and modular systems for both cameras and manipulators.</li>
+            <li>The design cycle emphasized pilot feedback, ensuring that every engineering decision translated into real‑world usability. This approach created a vehicle that is not only technically advanced but also intuitive and reliable in the field.</li>
+          </ul>
+
+          <h5>Frame</h5>
+          <ul class="list-style-type; circle;">
+            <li>The frame is constructed from 3 mm sheet aluminum, chosen after extensive evaluation of alternatives. HDPE was too buoyant, stainless steel too heavy, and nickel‑titanium alloys prohibitively expensive. Aluminum provided the ideal compromise, balancing strength, weight, and cost.</li>
+            <li>By carefully calculating buoyant forces, the team ensured that the frame weight perfectly counteracts the positively buoyant electronics tube, achieving neutral buoyancy.</li>
+            <li>Hydrodynamic efficiency was studied through both computational and physical testing. While improvements were possible, the team prioritized precision control over drag reduction. Slightly higher drag was intentionally accepted, as it enhances fine maneuvering and allows pilots to execute delicate mission tasks with greater accuracy.</li>
+            <li>The frame design also considered serviceability and modularity, allowing components to be swapped or upgraded without major redesigns.</li>
+          </ul>
+
+          <h5>Propulsion</h5>
+          <ul class="list-style-type; circle;">
+            <li>The propulsion system was one of the earliest and most significant design trade‑offs. After researching submersible thruster layouts, the team narrowed options to six‑ and eight‑thruster configurations.</li>
+            <li>The eight‑thruster configuration was selected for its superior stability and mobility, despite being more complex to integrate.</li>
+            <li>Horizontal thrusters are mounted at a 30‑degree orientation, a decision informed by pilot testing and analysis of previous mission footage. This orientation maximizes forward thrust while maintaining agility in lateral and vertical movements.</li>
+            <li>The propulsion system was refined using a pro‑con analysis framework, ensuring that every choice was deliberate and optimized for mission performance.</li>
+          </ul>
+
+          <h5>Modular Manipulator System</h5>
+          <ul class="list-style-type; circle;">
+            <li>Recognizing that no single tool could meet the diverse demands of marine research and infrastructure work, JONA was equipped with a quick‑change modular manipulator system.</li>
+            <li>The system uses an octagonal receiver that allows tools to be rotated in 45‑degree increments, expanding their versatility.</li>
+            <li>Tools are secured with neodymium magnets and a retaining pin, ensuring reliability under heavy loads while still allowing rapid field changes.</li>
+            <li>Two primary manipulators were developed:</li>
+            <li>Hook manipulator: Lightweight, simple, and highly reliable. Constructed from aluminum plates and a 3D‑printed part, it is inexpensive and easy to replace if damaged. Ideal for straightforward tasks where speed and durability are critical.</li>
+            <li>Mechanical gripper: A servo‑driven manipulator with interchangeable aluminum claws and rubber padding. The waterproofed high‑torque micro servo ensures durability, while the rubber padding allows for secure gripping with reduced power consumption.</li>
+            <li>The gripper is supported by intelligent current monitoring software. When current spikes above 3 amps, the servo automatically relaxes until the load stabilizes, preventing damage while maintaining grip. This innovation reduces power usage and increases efficiency during extended operations.</li>
+          </ul>
+
+          <h5>Tether System</h5>
+          <ul class="list-style-type; circle;">
+            <li>The tether was designed with two primary goals: minimize drag and reduce voltage drop. These goals are often contradictory, but the team achieved a balance through careful material selection.</li>
+            <li>Power is delivered via two 10 AWG ultra‑high strand count wires, while communication is handled by a CAT6A Ethernet cable. All cables are wrapped in a braided sheath for durability and ease of handling.</li>
+            <li>A major innovation is the detachable tether system, which uses Blue Trail Engineering Cobalt Connectors. This modular approach simplifies deployment, servicing, and storage, while also improving reliability.</li>
+            <li>To address buoyancy, the tether is fitted with foam pipe insulation segments at regular intervals. This makes the tether slightly positively buoyant, preventing it from dragging on the seafloor, snagging on obstacles, or pulling on the ROV.</li>
+            <li>The tether design also incorporates strain relief systems to protect connections under load, ensuring long‑term durability.</li>
+          </ul>
+
+          <h5>Electronics Enclosure</h5>
+          <ul class="list-style-type; circle;">
+            <li>JONA's electronics are housed in a 15 cm diameter clear acrylic tube, which provides both structural strength and visibility for quick diagnostics.</li>
+            <li>The cylindrical shape distributes strain evenly, while the clear walls allow operators to visually inspect for issues without opening the enclosure.</li>
+            <li>The enclosure is sealed with Blue Robotics flanges and O‑rings, chosen for their reliability and ease of service compared to gasket systems.</li>
+            <li>It accommodates 19 penetrator ports, with 16 currently in use for thrusters, cameras, manipulators, and sensors. Professional‑grade wet‑link penetrators and Blue Trail Cobalt Connectors ensure watertight reliability and modularity.</li>
+            <li>One of the most innovative features is the Electronics Skeleton:</li>
+            <li>A modular mounting system consisting of a custom aluminum plate, machined steel bars, and resin‑printed ribs.</li>
+            <li>PCBs slide into place and lock with set screws, allowing for easy reconfiguration and cable management.</li>
+            <li>The skeleton can be removed without tools, making servicing and upgrades fast and efficient.</li>
+            <li>Identical ribs simplify replacement, reducing the need for multiple spare parts.</li>
+            <li>Boards are organized by function, minimizing wiring complexity and potential points of failure.</li>
+          </ul>
+
+          <h3 style="margin-bottom: 20px; margin-top: 40px;">Electronics Overview</h3>
+          
+          <h5>Design Goals</h5>
+          <ul class="list-style-type; circle;">
+            <li>The electronics were designed to be the backbone of JONA's adaptability, with reliability, modularity, and flexibility as the guiding principles.</li>
+            <li>Instead of relying on generic off‑the‑shelf solutions, the team engineered a suite of custom printed circuit boards (PCBs). This decision gave complete control over functionality, layout, and serviceability.</li>
+            <li>By splitting the system into five dedicated PCBs, the electronics can be upgraded incrementally. If one board becomes outdated or fails, it can be replaced without redesigning the entire system.</li>
+            <li>This modular approach also makes troubleshooting more efficient. Boards can be isolated and tested individually, reducing downtime during missions.</li>
+            <li>The horizontal arrangement of the boards inside the enclosure was chosen to make them easy to slide out for inspection, repair, or replacement.</li>
+          </ul>
+
+          <h5>Electronics Skeleton</h5>
+          <ul class="list-style-type; circle;">
+            <li>One of the most innovative features of JONA is the proprietary electronics skeleton, a modular framework that organizes and secures the PCBs.</li>
+            <li>The skeleton is built from a custom aluminum plate bolted to the rear flange, with two machined steel bars running along its base.</li>
+            <li>Five 3D‑printed ribs slide onto the bars and lock into place with set screws, holding the PCBs securely while allowing for easy repositioning.</li>
+            <li>This design simplifies wiring by keeping everything neatly aligned, reducing clutter and minimizing potential points of failure.</li>
+            <li>The skeleton can be removed from the acrylic enclosure without tools, making it exceptionally serviceable in the field.</li>
+            <li>Each board can be independently removed for troubleshooting or swapped out for an upgraded version, ensuring that JONA can evolve with new technologies.</li>
+            <li>The ribs are identical, meaning only one type of spare part is needed, which reduces logistical complexity during missions.</li>
+          </ul>
+
+          <h5>PCB Functions</h5>
+          <div class="row">
+            <div class="col-md-8">
+              <ul class="list-style-type; circle;">
+                <li><strong>Power Distribution Board</strong></li>
+                <ul class="list-style-type; circle;">
+                  <li>Acts as the entry point for power from the tether.</li>
+                  <li>Distributes 12V power to the motor boards and includes a 12V to 5V converter for logic and control systems.</li>
+                  <li>Features a 4‑channel ADC that constantly monitors current and voltage on both the 12V and 5V systems, ensuring safe and efficient power management.</li>
+                </ul>
+                <li><strong>Motor Control Boards (x2)</strong></li>
+                <ul class="list-style-type; circle;">
+                  <li>Each board contains four Blue Robotics electronic speed controllers (ESCs).</li>
+                  <li>Together, the two boards manage all eight thrusters, translating logic signals into precise motor commands.</li>
+                  <li>The modular design allows for easy replacement of individual ESCs or entire boards if needed.</li>
+                </ul>
+                <li><strong>Networking Board</strong></li>
+                <ul class="list-style-type; circle;">
+                  <li>Serves as the communication hub for all Ethernet‑based devices.</li>
+                  <li>Provides five RJ45 ports: three with 100 Mbps Ethernet and custom 5V Power‑over‑Ethernet, and two with 1 Gbps Ethernet for high‑bandwidth devices.</li>
+                  <li>Built around a Gigablox Ethernet Switch from SwitchBlox, ensuring fast, reliable data transfer between cameras, sensors, and the control station.</li>
+                </ul>
+                <li><strong>Logic Board</strong></li>
+                <ul class="list-style-type; circle;">
+            </div>
+          <ul class="list-style-type; circle;">
+              <li>Hosts a Raspberry Pi 5, which acts as the central processor for the ROV.</li>
+              <li>Includes a 5V power bus and an I²C bus for communication with peripheral devices.</li>
+              <li>Integrates a 9‑axis inertial measurement unit (IMU) for orientation tracking.</li>
+              <li>Interfaces with all components via I²C or Ethernet IEEE 802.3, providing a flexible and standardized communication backbone.</li>
+            </ul>
+          </ul>
+
+          <h5>Sensor Package</h5>
+          <ul class="list-style-type; circle;">
+            <li>JONA's sensor suite is designed to be minimalistic yet modular, with the ability to expand as mission requirements evolve.</li>
+            <li>Pressure Sensor: A Blue Robotics Bar02 sensor measures depth and temperature. This data is used for navigation and integrated into the depth PID control system.</li>
+            <li>IMU: A BNO085 9‑axis IMU provides orientation data, including pitch, roll, and yaw. This information is critical for stabilization and enables autonomous navigation features.</li>
+            <li><strong>Cameras:</strong></li>
+            <ul class="list-style-type; circle;">
+              <li>JONA carries a modular array of low‑latency camera modules, giving the pilot clear situational awareness.</li>
+              <li>Each camera is paired with a Raspberry Pi Zero 2, which handles image processing independently.</li>
+              <li>This distributed design ensures resilience: if one camera fails, the rest of the vision system continues to function.</li>
+              <li>Additional cameras can be added depending on mission requirements, making the system highly adaptable.</li>
+            </ul>
+          </ul>
+
+          <h5>Control Station</h5>
+          <ul class="list-style-type; circle;">
+            <li>JONA's control system emphasizes portability and simplicity without sacrificing capability.</li>
+            <li>Instead of relying on a bulky, custom‑built control box, the ROV is operated from a standard laptop. This makes the system lightweight, easy to transport, and compatible with any personal computer.</li>
+            <li>The pilot uses an Xbox One controller as the primary interface. This choice provides a familiar, ergonomic, and reliable control method, lowering the learning curve for new operators.</li>
+            <li>The combination of a laptop and game controller creates a control station that is both professional and accessible, allowing pilots to focus on mission execution rather than complex hardware.</li>
+          </ul>
+
+          <h3 style="margin-bottom: 20px; margin-top: 40px;">Software Overview</h3>
+
+          <h5>Control Interface</h5>
+          <ul class="list-style-type; circle;">
+            <li>The pilot interface was designed to be as intuitive as possible, lowering the barrier to entry for new operators while still offering the precision and responsiveness demanded by experts.</li>
+            <li>An Xbox One controller connects via USB or Bluetooth, and JONA automatically detects and communicates with the device at startup, eliminating the need for complex setup.</li>
+            <li><strong>The front‑end client provides a unified dashboard that displays:</strong></li>
+            <ul class="list-style-type; circle;">
+              <li>High‑frame‑rate, low‑latency video feeds from all onboard cameras.</li>
+              <li>Real‑time telemetry including power consumption, orientation, internal temperature, and depth.</li>
+              <li>A 3D model of the ROV for spatial awareness, rendered in real time.</li>
+            </ul>
+            <li>Connection is streamlined: plugging in the tether's Ethernet cable automatically establishes a link to JONA's onboard server, accessible through any modern web browser. This ensures compatibility across operating systems and minimizes startup time.</li>
+            <li>The interface was built entirely from scratch using Vue.js and TypeScript, chosen for their ability to create responsive, visually appealing user interfaces.</li>
+            <li>Additional libraries include Tres.js for rendering the 3D model and Chart.js for graphing sensor data, giving the pilot both visual and numerical insight into the ROV's performance.</li>
+          </ul>
+
+          <h5>PID Stabilization</h5>
+          <ul class="list-style-type; circle;">
+            <li>Stable positioning is essential for underwater tasks, where currents and drift can easily disrupt operations. Without assistance, pilots would need to constantly correct for these forces, reducing efficiency and increasing fatigue.</li>
+            <li>To address this, the software team developed a custom stabilization system based on Proportional‑Integral‑Derivative (PID) control algorithms.</li>
+            <li>Four independent PID controllers manage depth, pitch, roll, and yaw. Together, they allow JONA to "anchor" itself in place, holding steady against environmental disturbances.</li>
+            <li><strong>The PID system works by:</strong></li>
+            <ul class="list-style-type; circle;">
+              <li>Calculating the error between the target value (such as a set depth) and the actual value.</li>
+              <li>Applying proportional corrections to respond immediately to deviations.</li>
+              <li>Using an integral term to correct long‑term drift by summing error over time.</li>
+              <li>Employing a derivative term to anticipate overshoot by measuring the rate of change.</li>
+            </ul>
+            <li>These three terms work in harmony to provide smooth, stable control, ensuring that once the pilot sets a position or orientation, JONA maintains it with minimal input.</li>
+          </ul>
+
+          <h5>Video Feed</h5>
+          <ul class="list-style-type; circle;">
+            <li>Real‑time video is critical for piloting an ROV, but most off‑the‑shelf streaming solutions introduce too much latency.</li>
+            <li>To overcome this, the software team built a custom video streaming system optimized for speed and reliability.</li>
+            <li>Each onboard camera is paired with a Raspberry Pi running a custom Python script that uses the Picamera2 API.</li>
+            <li>Video is encoded using MJPEG, a format chosen for its computational efficiency and ultra‑low latency. While MJPEG requires more bandwidth than other codecs, it can be encoded and decoded extremely quickly, minimizing delay.</li>
+            <li>Frames are transmitted via WebSocket to the topside client, ensuring smooth, continuous streaming.</li>
+            <li>Latency has been measured at under 170 ms, which is extraordinarily fast for underwater robotics. This ensures that pilots can react to their environment almost instantly, improving safety and precision.</li>
+          </ul>
+
+          <h5>Mission Task Software</h5>
+          <ul class="list-style-type; circle;">
+            <li><strong>3D Scaling</strong></li>
+            <ul class="list-style-type; circle;">
+              <li>Custom analysis software allows operators to measure objects directly from camera images.</li>
+              <li>By using known reference values, the system can calculate unknown lengths with high accuracy.</li>
+              <li>Camera warping is corrected automatically, ensuring measurements remain precise even at variable distances.</li>
+              <li>This feature is invaluable for tasks such as sizing underwater structures, identifying objects, or verifying mission objectives.</li>
+            </ul>
+            <li><strong>Invasive Carp Modeling</strong></li>
+            <ul class="list-style-type; circle;">
+              <li>Sunk Robotics developed a separate browser‑based application for ecological research.</li>
+              <li>The software allows researchers to input data and generate animated models of invasive carp movement in the Illinois River.</li>
+              <li>The resulting visualizations help scientists and policymakers understand migration patterns and ecological impact, supporting conservation and management efforts.</li>
+            </ul>
+          </ul>
+        
+        <div></div>
+  
+  </div>
+
+  <style>
+    .spec-list {
+      font-size: 1.1rem;
+    }
+  </style>
+
+  <script>
+    function toggleSpecs() {
+      const specs = document.getElementById('techSpecs');
+      const button = document.querySelector('.specs-button');
+      if (specs.style.display === 'none') {
+        specs.style.display = 'block';
+        button.style.display = 'none';
+      } else {
+        specs.style.display = 'none';
+        button.style.display = 'block';
+      }
+    }
+  </script>
 </section>
 
 

@@ -205,6 +205,11 @@ body {
   z-index: 2;
   text-decoration: none;
 }
+
+li {
+  font-size: 1.2rem;
+}
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0);}
   50% { transform: translateY(10px);}
