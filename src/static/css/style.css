@@ -96,7 +96,6 @@ body {
   position: relative;
   color: white;
   overflow: hidden;
-  
 }
 .footer-boat a {
   color: white;
@@ -199,7 +198,7 @@ body {
   transform: translateX(-50%);
 }
 .ad {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 .scroll-down-arrow {
   position: absolute;
