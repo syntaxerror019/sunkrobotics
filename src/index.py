@@ -1,15 +1,19 @@
-from flask import Flask, render_template, make_response
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-#@app.after_request
-#def add_cache_headers(response):
-#    if ["image/png", "application/octet-stream", "image/svg+xml"] in response.content_type:
-#        print("Cached!")
-#        response.headers["Cache-Control"] = "public,max-age=2592000"
-#    else:
-#        response.headers["Cache-Control"] = "no-store"
-#    return response
+@app.after_request
+def add_cache_headers(response):
+    # type of files to cache;
+    cache_types = ["image/", "video/", "audio/"]
+
+    if any(response.content_type.startswith(t) for t in cache_types):
+        #store them in cache for no more than 30 days.
+        response.headers["Cache-Control"] = "public, max-age=2592000"
+    else:
+        response.headers["Cache-Control"] = "no-store"
+
+    return response
 
 @app.route('/')
 def home():
