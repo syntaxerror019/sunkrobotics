@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.after_request
 def add_cache_headers(response):
-    print(response.content_type)
-    if response.content_type.startswith("text/html"):
-        response.headers["Cache-Control"] = "no-store"
-    elif response.content_type.startswith("img/"):
+    if ["image/png", "application/octet-stream", "image/svg+xml"] in response.content_type:
+        print("Cached!")
         response.headers["Cache-Control"] = "public,max-age=2592000"
+    else:
+        response.headers["Cache-Control"] = "no-store"
     return response
 
 @app.route('/')
