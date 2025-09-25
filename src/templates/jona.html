@@ -72,8 +72,20 @@
       </div>
    
     </div>
-  </div>
 
+    <!-- Product 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <img src="{{ url_for('static', filename='img/jona/logic.webp') }}" class="img-fluid rounded" style="max-width: 400px;" alt="Guard">
+      </div>
+      <div class="col-md-6">
+        <h3>Custom PCBs</h3>
+        <p class="lead">
+          Our custom boards power every part of the ROV—delivering safe, efficient energy, driving eight thrusters, linking sensors and cameras with high‑speed networking, and coordinating it all through a Raspberry Pi 5 for smart control and orientation.   </p>
+      </div>
+    </div>
+  </div>
+<br><br><br>
   <div id="techSpecs">
     <h1 class="text-center mb-5">Technical Specifications</h1>
     <div class="container spec-list">
@@ -161,7 +173,7 @@
 
           <h5>PCB Functions</h5>
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-12">
               <ul class="list-style-type; circle;">
                 <li><strong>Power Distribution Board</strong></li>
                 <ul class="list-style-type; circle;">
@@ -181,15 +193,13 @@
                   <li>Provides five RJ45 ports: three with 100 Mbps Ethernet and custom 5V Power‑over‑Ethernet, and two with 1 Gbps Ethernet for high‑bandwidth devices.</li>
                   <li>Built around a Gigablox Ethernet Switch from SwitchBlox, ensuring fast, reliable data transfer between cameras, sensors, and the control station.</li>
                 </ul>
-                <li><strong>Logic Board</strong></li>
+              <li><strong>Logic Board</strong></li>
                 <ul class="list-style-type; circle;">
-            </div>
-          <ul class="list-style-type; circle;">
-              <li>Hosts a Raspberry Pi 5, which acts as the central processor for the ROV.</li>
-              <li>Includes a 5V power bus and an I²C bus for communication with peripheral devices.</li>
-              <li>Integrates a 9‑axis inertial measurement unit (IMU) for orientation tracking.</li>
-              <li>Interfaces with all components via I²C or Ethernet IEEE 802.3, providing a flexible and standardized communication backbone.</li>
-            </ul>
+                <li>Hosts a Raspberry Pi 5, which acts as the central processor for the ROV.</li>
+               <li>Includes a 5V power bus and an I²C bus for communication with peripheral devices.</li>
+               <li>Integrates a 9‑axis inertial measurement unit (IMU) for orientation tracking.</li>
+               <li>Interfaces with all components via I²C or Ethernet IEEE 802.3, providing a flexible and standardized communication backbone.</li>
+             </ul>
           </ul>
 
           <h5>Sensor Package</h5>
@@ -236,12 +246,12 @@
             <li>Stable positioning is essential for underwater tasks, where currents and drift can easily disrupt operations. Without assistance, pilots would need to constantly correct for these forces, reducing efficiency and increasing fatigue.</li>
             <li>To address this, the software team developed a custom stabilization system based on Proportional‑Integral‑Derivative (PID) control algorithms.</li>
             <li>Four independent PID controllers manage depth, pitch, roll, and yaw. Together, they allow JONA to "anchor" itself in place, holding steady against environmental disturbances.</li>
-            <li><strong>The PID system works by:</strong></li>
+            <li><strong>PID system:</strong></li>
             <ul class="list-style-type; circle;">
-              <li>Calculating the error between the target value (such as a set depth) and the actual value.</li>
-              <li>Applying proportional corrections to respond immediately to deviations.</li>
-              <li>Using an integral term to correct long‑term drift by summing error over time.</li>
-              <li>Employing a derivative term to anticipate overshoot by measuring the rate of change.</li>
+              <li>Calculates the error between the target value (such as a set depth) and the actual value.</li>
+              <li>Applies proportional corrections to respond immediately to deviations.</li>
+              <li>Uses an integral term to correct long‑term drift by summing error over time.</li>
+              <li>Employs a derivative term to anticipate overshoot by measuring the rate of change.</li>
             </ul>
             <li>These three terms work in harmony to provide smooth, stable control, ensuring that once the pilot sets a position or orientation, JONA maintains it with minimal input.</li>
           </ul>
