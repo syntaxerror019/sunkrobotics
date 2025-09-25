@@ -1,7 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, make_response
 
 app = Flask(__name__)
-app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 60  # 30 days
+
+@app.after_request
+def add_cache_headers(response):
+    print(response.content_type)
+    if response.content_type.startswith("text/html")
+        response.headers["Cache-Control"] = "no-store"
+    elif response.content_type.startswith("img/")
+        response.headers["Cache-Control"] = "public,max-age=2592000"
+    return response
 
 @app.route('/')
 def home():
