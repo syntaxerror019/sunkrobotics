@@ -5,9 +5,9 @@ app = Flask(__name__)
 @app.after_request
 def add_cache_headers(response):
     print(response.content_type)
-    if response.content_type.startswith("text/html")
+    if response.content_type.startswith("text/html"):
         response.headers["Cache-Control"] = "no-store"
-    elif response.content_type.startswith("img/")
+    elif response.content_type.startswith("img/"):
         response.headers["Cache-Control"] = "public,max-age=2592000"
     return response
 
