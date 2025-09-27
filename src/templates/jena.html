@@ -10,7 +10,7 @@
     <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jena/full.webp') }}" class="img-fluid rounded" style="max-width: 400px;" alt="Jona ROV">
+        <img src="{{ url_for('static', filename='img/jena/full.webp') }}" class="img-fluid rounded img-max-400" alt="Jona ROV">
       </div>
       <div class="col-md-6">
         <h3>Overview</h3>
@@ -23,7 +23,7 @@
     <!-- Product 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jena/base.webp') }}" class="img-fluid rounded" style="max-width: 800px;" alt="Guard">
+        <img src="{{ url_for('static', filename='img/jena/base.webp') }}" class="img-fluid rounded img-max-800" alt="Guard">
       </div>
       <div class="col-md-6">
         <h3>Advanced Buoyancy Engine</h3>
@@ -36,7 +36,7 @@
       <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jena/wifi.webp') }}" class="img-fluid rounded" style="max-width: 500px;" alt="Gripper">
+        <img src="{{ url_for('static', filename='img/jena/wifi.webp') }}" class="img-fluid rounded img-max-500" alt="Gripper">
       </div>
       <div class="col-md-6">
         <h3>Compatible Communication</h3>
@@ -49,7 +49,7 @@
     <!-- Product 2 -->
     <div class="row align-items-center mb-5 flex-md-row-reverse">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jena/sense.webp') }}" class="img-fluid rounded" style="max-width: 600px;" alt="Fork">
+        <img src="{{ url_for('static', filename='img/jena/sense.webp') }}" class="img-fluid rounded img-max-600" alt="Fork">
       </div>
       <div class="col-md-6">
         <h3>Pressure Sensors</h3>
@@ -62,7 +62,7 @@
       <!-- Product 1 -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/jena/ui.webp') }}" class="img-fluid rounded" style="max-width: 600px;" alt="Tube Cameras">
+        <img src="{{ url_for('static', filename='img/jena/ui.webp') }}" class="img-fluid rounded img-max-600" alt="Tube Cameras">
       </div>
       <div class="col-md-6">
         <h3>Advanced UI</h3>
@@ -73,15 +73,146 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-center">
-    <a href="{{ url_for('static', filename='img/jena/ds.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
-      View Technical Documentation (PDF)
-    </a>
-    <a href="{{ url_for('static', filename='img/jena/sid.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
-      View SID (PDF)
-    </a>
+  <div id="techSpecs">
+    <br><br><br>
+    <h1 class="text-center mb-5">Technical Specifications</h1>
+    <div class="container spec-list">
+      <div class="row">
+        <div class="col-12">
+          <div class="dropdown-section">
+            <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+              Hardware Overview
+              <span class="dropdown-icon">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-inner">
+                <h5>Buoyancy Engine and Structure</h5>
+                <ul>
+                  <li>Motor‑driven piston with integrated rotary encoder adjusts internal volume to vary density.</li>
+                  <li>Enables controlled ascent and descent at variable speeds.</li>
+                  <li>High piston‑shaft friction combined with a natural dead band below 30% motor speed prevents oscillations and overshoot.</li>
+                  <li>Mechanical design prioritizes stability and efficiency over raw speed, ensuring precise convergence to target depths.</li>
+                </ul>
+
+                <h5>Safety Systems</h5>
+                <ul>
+                  <li>Operates under vacuum rather than positive pressure, ensuring internal pressure never exceeds ambient hydrostatic pressure.</li>
+                  <li>Equipped with a 2.5 cm rubber stopper for passive pressure relief in the event of improper depressurization.</li>
+                  <li>Passive safety design eliminates risks associated with over‑pressurization and ensures reliable operation in diverse aquatic environments.</li>
+                </ul>
+
+                <h5>Antenna and Housing</h5>
+                <ul>
+                  <li>External antenna protrudes above the water surface for uninterrupted communication.</li>
+                  <li>Compact, field‑ready housing designed for durability and repeatable deployment.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-section">
+            <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+              Electronics Overview
+              <span class="dropdown-icon">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-inner">
+                <h5>Control System</h5>
+                <ul>
+                  <li>Rotary encoder provides precise piston position feedback.</li>
+                  <li>Closed‑loop PID controller determines optimal piston displacement.</li>
+                  <li>Proportional controller refines adjustments for fine depth regulation.</li>
+                </ul>
+
+                <h5>Sensors</h5>
+                <ul>
+                  <li>Depth and pressure sensors provide continuous feedback for profiling.</li>
+                  <li>Data sampled at fixed 5‑second intervals for consistent time‑indexed datasets.</li>
+                </ul>
+
+                <h5>Power and Reliability</h5>
+                <ul>
+                  <li>Electronics designed for low‑power operation during extended deployments.</li>
+                  <li>High‑friction piston and dead band characteristics reduce unnecessary motor activity, improving efficiency.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-section">
+            <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+              Software Overview
+              <span class="dropdown-icon">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-inner">
+                <h5>Command and Communication Protocol</h5>
+                <ul>
+                  <li>WiFi and WebSocket communication with a client laptop access point on shore.</li>
+                  <li><strong>Supported commands:</strong></li>
+                  <ul>
+                    <li><strong>profile</strong> → Execute full vertical profile of the water column</li>
+                    <li><strong>get_data</strong> → Return collected depth data array</li>
+                    <li><strong>get_pressure</strong> → Return collected pressure data array</li>
+                    <li><strong>set_target_depth</strong> → Define and hold a target depth during profiling</li>
+                    <li><strong>set_hold_time</strong> → Specify dwell time at target depth for data collection</li>
+                    <li><strong>break</strong> → Terminate communication and revert to standby mode</li>
+                  </ul>
+                </ul>
+
+                <h5>Data Handling</h5>
+                <ul>
+                  <li>Depth and pressure data returned as arrays.</li>
+                  <li>Each array element represents 5 seconds of float time.</li>
+                  <li>Each value corresponds to depth (m) or pressure (Pa).</li>
+                  <li>Structured format simplifies downstream analysis and integration into client workflows.</li>
+                </ul>
+
+                <h5>Control Logic</h5>
+                <ul>
+                  <li>Software integrates PID and proportional control loops with sensor feedback.</li>
+                  <li>Ensures smooth piston actuation and accurate depth convergence.</li>
+                  <li>Designed for robustness and repeatability in field conditions.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+function toggleDropdown(button) {
+  const content = button.nextElementSibling;
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  
+  if (isExpanded) {
+    // Close dropdown
+    button.setAttribute('aria-expanded', 'false');
+    content.classList.remove('show');
+  } else {
+    // Open dropdown
+    button.setAttribute('aria-expanded', 'true');
+    content.classList.add('show');
+  }
+}
+
+// Add keyboard support for accessibility
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownHeaders = document.querySelectorAll('.dropdown-header');
+  
+  dropdownHeaders.forEach(header => {
+    header.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleDropdown(this);
+      }
+    });
+  });
+});
+</script>
 
 
 
