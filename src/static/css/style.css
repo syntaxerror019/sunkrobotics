@@ -40,8 +40,8 @@ h3 {
 }
 
 .spacer {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .section-padding {
@@ -60,6 +60,36 @@ h3 {
 .navbar-brand, .nav-link {
   color: white !important;
 }
+
+/* Dropdown menu styling */
+.navbar .dropdown-menu {
+  background-color: white;
+  padding: 0.5rem 0;
+  min-width: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar .dropdown-item {
+  color: #333;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: var(--bars);
+  color: white !important;
+}
+
+.navbar .dropdown-item:active {
+  background-color: var(--hover-color) !important;
+  color: white !important;
+}
+
 #mainNav {
   transition: all 0.3s ease;
 }
