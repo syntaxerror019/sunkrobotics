@@ -40,8 +40,8 @@ h3 {
 }
 
 .spacer {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .section-padding {
@@ -60,6 +60,36 @@ h3 {
 .navbar-brand, .nav-link {
   color: white !important;
 }
+
+/* Dropdown menu styling */
+.navbar .dropdown-menu {
+  background-color: white;
+  padding: 0.5rem 0;
+  min-width: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar .dropdown-item {
+  color: #333;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.navbar .dropdown-item:hover {
+  background-color: var(--bars);
+  color: white !important;
+}
+
+.navbar .dropdown-item:active {
+  background-color: var(--hover-color) !important;
+  color: white !important;
+}
+
 #mainNav {
   transition: all 0.3s ease;
 }
@@ -400,3 +430,85 @@ li {
   }
 }
 
+/* Image sizing classes */
+.img-max-400 { max-width: 400px; }
+.img-max-500 { max-width: 500px; }
+.img-max-600 { max-width: 600px; }
+.img-max-700 { max-width: 700px; }
+.img-max-800 { max-width: 800px; }
+.img-max-250 { max-width: 250px; }
+.img-max-300 { max-width: 300px; }
+.img-max-350 { max-width: 350px; }
+.img-max-370 { max-width: 370px; }
+
+/* Contact form styles */
+.contact-textarea {
+  height: 150px;
+}
+
+.contact-map-container {
+  position: relative;
+}
+
+.contact-map-wrapper {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+
+.contact-map-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--bs-border-radius-lg);
+}
+
+.contact-map-credit {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Text sizing classes */
+.text-max-700 {
+  max-width: 700px;
+}
+
+/* 3D Model iframe styles */
+.iframe-3d-container {
+  width: 70%;
+  min-width: 320px;
+  max-width: 900px;
+}
+
+.iframe-3d {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Animation classes */
+.bounce-animation {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
+
+/* Placeholder box for steve.html */
+.placeholder-box {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  min-height: 200px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

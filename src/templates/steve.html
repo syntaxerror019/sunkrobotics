@@ -1,0 +1,374 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Products / Showcase Section -->
+<section id="robots" class="py-5 bg-light">
+  <div class="container">
+    <h1 class="text-center mb-5 mt-5">STEVE ROV and Accessories</h1>
+
+    <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <div class="placeholder-box img-max-500 d-flex align-items-center justify-content-center">
+          <img" class="img-fluid rounded img-max-400" alt="STEVE ROV">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Overview</h3>
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <div class="placeholder-box img-max-250 d-flex align-items-center justify-content-center">
+          <span class="text-muted">Component A</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Custom Component A</h3>
+        <p class="lead">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+        </p>
+      </div>
+    </div>
+
+      <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <div class="placeholder-box img-max-300 d-flex align-items-center justify-content-center">
+          <span class="text-muted">Component B</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Advanced Component B</h3>
+        <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <div class="placeholder-box img-max-370 d-flex align-items-center justify-content-center">
+          <span class="text-muted">Component C</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Specialized Component C</h3>
+        <p class="lead">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+
+      <!-- Product 1 -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <div class="placeholder-box img-max-350 d-flex align-items-center justify-content-center">
+          <span class="text-muted">Component D</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Modular Component D</h3>
+        <p class="lead">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+      </div>
+   
+    </div>
+
+    <!-- Product 2 -->
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6">
+        <div class="placeholder-box img-max-400 d-flex align-items-center justify-content-center">
+          <span class="text-muted">Component E</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Innovative Component E</h3>
+        <p class="lead">
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Model Section -->
+  <div class="container">
+    <br><br><br>
+    <h1 class="text-center mb-5">3D Model</h1>
+
+    <div class="model-container">
+      <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-center">
+          <div class="ratio ratio-16x9 iframe-3d-container">
+          <iframe src="https://medford52.autodesk360.com/shares/public/SH28cd1QT2badd0ea72b2f49a92e95b4cd8e?mode=embed"
+            allowfullscreen
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+            class="iframe-3d">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+     
+
+  <div id="techSpecs">
+    <br><br><br>
+    <h1 class="text-center mb-5">Technical Specifications</h1>
+    <div class="container spec-list">
+      <div class="row">
+        <div class="col-12">
+          <div class="dropdown-section">
+            <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+              Hardware Overview
+              <span class="dropdown-icon">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-inner">
+                <h5>Design Philosophy</h5>
+                <ul>
+                  <li>STEVE ROV was engineered with a focus on system simplification, modularity, and reliability.</li>
+                  <li>Major redesigns from previous year: removal of Arduino Uno, complete overhaul of camera and networking systems, simplified manipulator.</li>
+                  <li>Guiding principles: minimize leak paths, reduce wiring complexity, maximize pilot usability, and ensure maintainability under field conditions.</li>
+                </ul>
+
+                <h5>Frame & Structure</h5>
+                <ul>
+                  <li>Constructed from 6 mm acrylic side panels and 80/20® T‑slotted aluminum profiles for modularity and strength.</li>
+                  <li>Clear acrylic end caps laser‑cut in‑house; custom sizing reduced cost and improved fit.</li>
+                  <li>Central 100 mm ID acrylic tube (559 mm length) houses electronics; reused from prior year with modifications.</li>
+                  <li>Neutral buoyancy targeted by balancing tube displacement (276 in³) with aluminum ballast cubes ("inverse buoyancy modules").</li>
+                  <li>Slight negative buoyancy chosen to improve stability during manipulation tasks.</li>
+                </ul>
+
+                <h5>Propulsion</h5>
+                <ul>
+                  <li>Six Blue Robotics T200 thrusters in BlueROV2 configuration.</li>
+                  <li>Four thrusters angled at 45° for horizontal translation (X/Y) and yaw.</li>
+                  <li>Two vertical thrusters for Z‑axis control.</li>
+                  <li>Provides 5‑DOF control (X, Y, Z, roll, yaw) with sufficient redundancy for competition tasks.</li>
+                  <li>Custom motor control library maps joystick vectors to thrust allocation matrix.</li>
+                  <li>Upgraded tether wiring from 16 AWG to 10 AWG reduced resistive losses, eliminating voltage sag under full load.</li>
+                  <li>Thrusters powered directly from 12 V bus via ESCs; capable of full‑speed operation without brownouts.</li>
+                </ul>
+
+                <h5>Manipulator</h5>
+                <ul>
+                  <li>Simplified dual‑hook manipulator fabricated from laser‑cut acrylic.</li>
+                  <li>Painted red for underwater visibility.</li>
+                  <li>Modular attachment system: hooks mounted via magnets, enabling future tool interchangeability.</li>
+                  <li>Optimized spacing for gripping ½‑inch PVC pipes (competition props).</li>
+                  <li>Trade‑off: reduced dexterity vs. mechanical gripper, but improved reliability, cost, and ease of maintenance.</li>
+                </ul>
+
+                <h5>Cameras</h5>
+                <ul>
+                  <li>Three modular "tube cameras" provide forward, downward, and manipulator views.</li>
+                  <li>Each module includes:
+                    <ul>
+                      <li>Raspberry Pi Camera Module 3.</li>
+                      <li>Raspberry Pi Zero 2 W with Ethernet HAT.</li>
+                      <li>PLA 3D‑printed tray for mounting.</li>
+                    </ul>
+                  </li>
+                  <li>Housed in 50 mm acrylic tubes with SLA resin‑printed flanges (Formlabs Form3, Grey Pro resin).</li>
+                  <li>Sealing achieved with 49 mm O‑ring, JB‑Weld epoxy on penetrators, and WELD‑ON acrylic adhesive.</li>
+                  <li>One penetrator capped for pressure equalization; second penetrator carries Cat 6 Ethernet + DC power.</li>
+                  <li>Mounting: laser‑cut acrylic brackets and custom 3D‑printed angled mounts for optimal pilot visibility.</li>
+                  <li>Achieved <200 ms latency and high frame rates, a major improvement over prior year's low‑quality feeds.</li>
+                </ul>
+
+                <h5>Buoyancy</h5>
+                <ul>
+                  <li>Achieved near‑neutral buoyancy using four 5 cm aluminum cubes ("inverse buoyancy modules").</li>
+                  <li>Electronics enclosure displaces 276 in³ of water; weights balance displacement.</li>
+                  <li>ROV is slightly negatively buoyant, aiding stability during tasks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-section">
+            <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+              Electronics Overview
+              <span class="dropdown-icon">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-inner">
+                <h5>Design Philosophy</h5>
+                <ul>
+                  <li>Consolidated electronics into a single enclosure to minimize penetrations and leak risks.</li>
+                  <li>Adopted Build, Reuse, Buy philosophy:
+                    <ul>
+                      <li>Build: acrylic housings, trays, mounts.</li>
+                      <li>Reuse: thrusters, Raspberry Pis, frame.</li>
+                      <li>Buy: precision penetrators, O‑ring flanges.</li>
+                    </ul>
+                  </li>
+                  <li>Trade‑offs: accepted heavier tether for reliability; selected larger cameras for robustness.</li>
+                </ul>
+
+                <h5>Electronics Enclosure</h5>
+                <ul>
+                  <li>100 mm acrylic tube, 559 mm length.</li>
+                  <li>Internal tray: laser‑cut 6 mm plywood.</li>
+                  <li>Top of tray: Raspberry Pi 4, 12V→5V converter, 12V→9V converter, PWM controller, 5V bus.</li>
+                  <li>Bottom of tray: two aluminum U‑bars as 12 V rails, six ESCs.</li>
+                  <li>Raspberry Pi communicates with PWM controller via I²C; ESCs driven by PWM.</li>
+                  <li>Power distribution:
+                    <ul>
+                      <li>12 V bus → ESCs.</li>
+                      <li>12 V→5 V converter → Pi 4, Pi Zero 2 Ws, PWM controller.</li>
+                      <li>12 V→9 V converter → Ethernet switch.</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h5>Networking & Ethernet Switch</h5>
+                <ul>
+                  <li>Central TP‑Link 8‑port switch, stripped of casing to reduce volume.</li>
+                  <li>Housed in SLA resin‑printed waterproof enclosure.</li>
+                  <li>Transparent 6 mm acrylic inspection window with silicone gasket.</li>
+                  <li>All cables epoxied into housing for watertight integrity.</li>
+                  <li>Provides deterministic, low‑latency communication between Pi 4, cameras, and topside.</li>
+                </ul>
+
+                <h5>Tether System</h5>
+                <ul>
+                  <li>Power: 10 AWG high‑strand wires (significant upgrade from 16 AWG).</li>
+                  <li>Communication: single Cat 6a Ethernet cable.</li>
+                  <li>Slim, low‑drag tether compared to competitors using multi‑cable bundles.</li>
+                  <li>Voltage stability maintained under full thruster load.</li>
+                </ul>
+
+                <h5>Buoyancy & Ballast</h5>
+                <ul>
+                  <li>Electronics tube displaces 276 in³ of water, requiring ballast for neutral buoyancy.</li>
+                  <li>Four 5 cm aluminum cubes used as "inverse buoyancy modules."</li>
+                  <li>Slight negative buoyancy chosen for improved station‑keeping.</li>
+                </ul>
+
+                <h5>Manufacturing Choices</h5>
+                <ul>
+                  <li>Penetrators and O‑ring flanges purchased due to precision requirements.</li>
+                  <li>Plan to manufacture O‑ring flanges in‑house in future iterations.</li>
+                  <li>External housings (cameras, Ethernet switch, manipulator) designed and fabricated in‑shop, reducing cost.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-section">
+            <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+              Software Overview
+              <span class="dropdown-icon">▼</span>
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-inner">
+                <h5>Design Philosophy</h5>
+                <ul>
+                  <li>Fully custom software stack written in Python for tight hardware integration and low overhead.</li>
+                  <li>Avoided ArduSub to eliminate unnecessary abstraction layers and improve performance.</li>
+                  <li>Emphasis on modularity, allowing rapid iteration and subsystem upgrades.</li>
+                </ul>
+
+                <h5>Core System</h5>
+                <ul>
+                  <li>Raspberry Pi 4 runs steve‑rov, the central control daemon.</li>
+                  <li>Handles:
+                    <ul>
+                      <li>Sensor integration (depth sensor, IMU).</li>
+                      <li>Thruster command generation.</li>
+                      <li>Camera stream management.</li>
+                      <li>Communication with topside client.</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <h5>Pilot Interface</h5>
+                <ul>
+                  <li>Xbox controller connected to topside laptop.</li>
+                  <li>steve‑controller translates joystick inputs into normalized motion vectors.</li>
+                  <li>Motion vectors mapped to thruster allocation matrix in steve‑rov.</li>
+                  <li>Provides intuitive, low‑latency control with minimal training overhead.</li>
+                </ul>
+
+                <h5>Camera System</h5>
+                <ul>
+                  <li>Each Pi Zero 2 W runs steve‑eye.</li>
+                  <li>Encodes video in Motion JPEG, streams via WebSocket.</li>
+                  <li>Dedicated compute per camera prevents bottlenecks and ensures high frame rate.</li>
+                  <li>Achieved sub‑200 ms end‑to‑end latency, enabling precise manipulation.</li>
+                </ul>
+
+                <h5>Top‑Side Client</h5>
+                <ul>
+                  <li>Linux laptop running lightweight web client (HTML/CSS/JS).</li>
+                  <li>Displays three camera feeds simultaneously.</li>
+                  <li>Simplified setup: one laptop + one controller, reducing failure points compared to multi‑monitor rigs.</li>
+                </ul>
+
+                <h5>Stability & Positioning</h5>
+                <ul>
+                  <li>Custom PID depth controller implemented in Python.</li>
+                  <li>Input: Blue Robotics depth sensor.</li>
+                  <li>Control law:
+                    <ul>
+                      <li>Error = target depth – current depth.</li>
+                      <li>Output = Kp·e(t) + Ki∫e(t)dt + Kd·de(t)/dt.</li>
+                    </ul>
+                  </li>
+                  <li>Gains tuned empirically for minimal overshoot and steady‑state error.</li>
+                  <li>Provides "vertical anchor" mode, locking ROV at a fixed depth for precision tasks.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleDropdown(button) {
+  const content = button.nextElementSibling;
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  
+  if (isExpanded) {
+    // Close dropdown
+    button.setAttribute('aria-expanded', 'false');
+    content.classList.remove('show');
+  } else {
+    // Open dropdown
+    button.setAttribute('aria-expanded', 'true');
+    content.classList.add('show');
+  }
+}
+
+// Add keyboard support for accessibility
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownHeaders = document.querySelectorAll('.dropdown-header');
+  
+  dropdownHeaders.forEach(header => {
+    header.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleDropdown(this);
+      }
+    });
+  });
+});
+</script>
+
+{% endblock %}

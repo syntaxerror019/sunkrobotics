@@ -5,31 +5,136 @@
 <!-- Products / Showcase Section -->
 <section id="robots" class="py-5 bg-light">
   <div class="container">
-    <h1 class="text-center mb-5">BOB ROV</h1>
+    <h1 class="display-3 fw-bold text-center mb-5">BOB ROV</h1>
 
-    <!-- Product 1 -->
-    <div class="row align-items-center mb-5">
-      <div class="col-md-6">
-        <img src="{{ url_for('static', filename='img/bob/bob.webp') }}" class="img-fluid rounded" style="max-width: 400px;" alt="Bob ROV">
+    <!-- Development Notice -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="text-center shadow p-4 mb-3" role="alert" style="border-radius: 10px; background-color: #004080; color: white;">
+          <strong>BOB ROV IS CURRENTLY IN DEVELOPMENT. RESOURCES ON THIS PAGE ARE SUBJECT TO CHANGE</strong>
+        </div>
       </div>
-      <div class="col-md-6">
-        <h3>Overview</h3>
+    </div>
+
+    <!-- Hero Image Section -->
+    <div class="row align-items-center mb-5">
+      <div class="col-lg-7">
+        <img src="{{ url_for('static', filename='img/bob/bob.webp') }}" class="img-fluid rounded" style="width: 100%;" alt="Bob ROV">
+      </div>
+      <div class="col-lg-5">
+        <h3 class="mb-4">Design Purpose</h3>
         <p class="lead">
-          BOB ROV is a state-of-the-art, vertically profiling autonomous robot designed to collect critical oceanographic data from the surface down to great depths. Built as part of the GO-BGC (Global Ocean Biogeochemistry Array) initiative, BOB ROV aims to help researchers monitor and understand the chemistry, biology, and physics of the global ocean in real time. Unlike traditional floats, BOB was engineered with real-world usability at its core. It features a next-generation PCB system, improving reliability, modularity, and serviceability in the field.
+          BOB ROV was conceived as a general deep sea underwater platform, allowing operations at <strong>500 meter depths</strong>. A modular design will allow BOB ROV to be outfitted with tools for roles such as exploration, sea bed sampling, infrastructure installation and repair.
         </p>
       </div>
     </div>
 
-  <div class="d-flex justify-content-center">
-    <a href="{{ url_for('static', filename='img/jena/ds.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
-      View Technical Documentation (PDF)
-    </a>
-    <a href="{{ url_for('static', filename='img/jena/sid.pdf') }}" target="_blank" class="btn btn-primary btn-lg mx-2">
-      View SID (PDF)
-    </a>
+    <!-- Technical Specifications -->
+    <div id="techSpecs">
+      <br><br><br>
+      <h1 class="text-center mb-5">Technical Specifications</h1>
+      <div class="container spec-list">
+        <div class="row">
+          <div class="col-12">
+            <div class="dropdown-section">
+              <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+                Hardware Overview
+                <span class="dropdown-icon">▼</span>
+              </button>
+              <div class="dropdown-content">
+                <div class="dropdown-inner">
+                  <h5>Enclosure</h5>
+                  <ul>
+                    <li>The enclosure consists of end caps bolted to flanges welded to a ⅜" thick tube with a 6" OD.</li>
+                    <li>All metal components on the ROV's exterior are made of 316 stainless steel to avoid rust and galvanic corrosion</li>
+                    <li>Each end cap is sealed using a primary face seal O-Ring and 2 secondary radial O-Ring seals</li>
+                  </ul>
+
+                  <h5>End Cap Seal</h5>
+                  <ul>
+                    <li>The face seal is compressed using sixteen ¼ 20 bolts with skewed thread lock nuts.</li>
+                    <li>The radial seals were designed using the <a href="https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/Parker_TechSeal_Radial-Seal-Design-Guide_TSD-5440.pdf" target="_blank">Parker Radial Seal Design Guide</a></li>
+                    <li>The face seal was designed using <a href="https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/ORD-5700.pdf" target="_blank">ORD 5700: Parker O-Ring Handbook</a></li>
+                    <li>The Radial O-Rings are <a href="https://www.gallagherseals.com/products/o-rings/o-rings/epdm-o-rings/as-568-epdm-parker-e0962-90.html" target="_blank">EPDM (AS-568) size 352 from Gallagher Seals</a></li>
+                    <li>The Face O-Rings are <a href="https://www.gallagherseals.com/products/o-rings/o-rings/epdm-o-rings/as-568-epdm-parker-e0962-90.html" target="_blank">EPDM (AS-568) size 354 from Gallagher Seals</a></li>
+                  </ul>
+
+                  <h5>External Frame</h5>
+                  <ul>
+                    <li>Split collars built into the flanges hold .115" thickness 1" OD tubes which serve as handles, cable channels, and mounting points</li>
+                    <li>The thrusters are bolted to their mounts using four M3 screws. These mounts are connected to the flange with two 10-24 bolts</li>
+                    <li>Curved ⅛" steel thruster housings are affixed by being sandwiched between the thrusters and their mounts</li>
+                    <li>Thruster guard design is yet to be determined but will likely feature a metal mesh</li>
+                  </ul>
+
+                  <h5>Camera Window</h5>
+                  <ul>
+                    <li>Round 10mm thickness, 50mm OD sapphire window</li>
+                    <li>The Window Face O-Ring is <a href="https://www.gallagherseals.com/products/o-rings/o-rings/epdm-o-rings/as-568-epdm-parker-e0962-90.html" target="_blank">EPDM (AS-568) size 322 from Gallagher Seals</a></li>
+                    <li>The Window Housing is connected to the front end cap using sixteen 10-24 bolts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown-section">
+              <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+                Electronics Overview
+                <span class="dropdown-icon">▼</span>
+              </button>
+              <div class="dropdown-content">
+                <div class="dropdown-inner">
+                  <h5>Electronics Information</h5>
+                  <ul>
+                    <li>Electronics specifications coming soon...</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown-section">
+              <button class="dropdown-header" aria-expanded="false" onclick="toggleDropdown(this)">
+                Software Overview
+                <span class="dropdown-icon">▼</span>
+              </button>
+              <div class="dropdown-content">
+                <div class="dropdown-inner">
+                  <h5>Software Information</h5>
+                  <ul>
+                    <li>Software specifications coming soon...</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-
+<script>
+function toggleDropdown(button) {
+  const section = button.parentElement;
+  const content = section.querySelector('.dropdown-content');
+  const icon = button.querySelector('.dropdown-icon');
+  const isExpanded = button.getAttribute('aria-expanded') === 'true';
+  
+  if (isExpanded) {
+    button.setAttribute('aria-expanded', 'false');
+    content.style.maxHeight = '0';
+    content.style.opacity = '0';
+    content.classList.remove('show');
+    icon.style.transform = 'rotate(0deg)';
+  } else {
+    button.setAttribute('aria-expanded', 'true');
+    content.style.maxHeight = content.scrollHeight + 'px';
+    content.style.opacity = '1';
+    content.classList.add('show');
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+</script>
 
 {% endblock %}

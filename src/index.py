@@ -39,9 +39,13 @@ def jona():
 def jena():
     return render_template('jena.html')
 
-@app.route('/steve')
-def steve():
-    return render_template('steve.html')
+# @app.route('/steve')
+# def steve():
+#     return render_template('steve.html')
+
+@app.route('/bob')
+def bob():
+    return render_template('bob.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

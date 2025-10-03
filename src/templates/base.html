@@ -48,7 +48,17 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item h4 spacer"><a class="nav-link" href="/">Home</a></li>
           <li class="nav-item h4 spacer"><a class="nav-link" href="/about">About</a></li>
-          <li class="nav-item h4 spacer"><a class="nav-link" href="/#robots">Robots</a></li>
+          <li class="nav-item dropdown h4 spacer">
+            <a class="nav-link dropdown-toggle" href="/#robots" id="robotsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Robots
+            </a>
+            <ul class="dropdown-menu mt-2 shadow rounded border-0" aria-labelledby="robotsDropdown">
+              <li><a class="dropdown-item" href="/bob">BOB ROV</a></li>
+              <li><a class="dropdown-item" href="/jona">JONA ROV</a></li>
+              <li><a class="dropdown-item" href="/jena">JENA FLOAT</a></li>
+                        <!-- Add more robots here as needed -->
+            </ul>
+          </li>
           <li class="nav-item h4 spacer"><a class="nav-link" href="/contact">Contact</a></li>
         </ul>
       </div>
