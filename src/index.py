@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.after_request
 def add_cache_headers(response):
-    # type of files to cache;
     cache_types = ["image/", "video/", "audio/"]
 
     if any(response.content_type.startswith(t) for t in cache_types):
@@ -46,6 +45,10 @@ def jena():
 @app.route('/bob')
 def bob():
     return render_template('bob.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
