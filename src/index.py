@@ -38,10 +38,6 @@ def jona():
 def jena():
     return render_template('jena.html')
 
-# @app.route('/steve')
-# def steve():
-#     return render_template('steve.html')
-
 @app.route('/bob')
 def bob():
     return render_template('bob.html')
