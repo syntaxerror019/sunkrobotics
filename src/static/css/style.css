@@ -94,7 +94,7 @@ h3 {
   transition: all 0.3s ease;
 }
 #mainNav img {
-  height: 100px;
+  height: 80px;
   transition: height 0.3s ease;
 }
 /* When scroled */
@@ -109,7 +109,7 @@ h3 {
 }
 .hero {
   position: relative;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 85px);
   display: flex;
   justify-content: center;
   align-items: center;
