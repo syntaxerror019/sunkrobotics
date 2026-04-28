@@ -39,6 +39,8 @@ yarn-error.log
 *.tlh
 *.tli
 
+.vscode/
+
 # Ignore compiled assets
 static/css/*.css.map
 static/js/*.js.map
