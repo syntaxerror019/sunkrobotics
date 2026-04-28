@@ -90,6 +90,12 @@ h3 {
   color: white !important;
 }
 
+.img-fluid {
+  max-width: 90vw !important;
+  width: inherit;
+  height: auto;
+}
+
 #mainNav {
   transition: all 0.3s ease;
 }
@@ -169,9 +175,6 @@ h3 {
 }
 .footer-content {
   padding: 0;
-}
-.img-fluid {
-  max-height: 600px;
 }
 .btn {
   background-color: var(--bars);
