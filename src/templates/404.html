@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Page Not Found - Sunk Robotics">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/favicon/favicon.svg') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon/apple-touch-icon.png') }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon/favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon/favicon-16x16.png') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='img/favicon/android-chrome-192x192.png') }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ url_for('static', filename='img/favicon/android-chrome-512x512.png') }}">
+  <link rel="manifest" href="{{ url_for('static', filename='img/favicon/site.webmanifest') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon/favicon.ico') }}">
+  <title>404 - Page Not Found | Sunk Robotics</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <style>
+    /* 404-specific overrides that extend your existing style.css */
+    :root {
+      --ocean-blue: #0077be;
+      --dark-blue: #005f8d;
+      --light-blue: #a6dcef;
+      --accent-color: #00bcd4;
+      --hover-color: #004a70;
+      --new-color: #0a2540;
+      --bars: #004080;
+    }
+
+    /* Make the 404 page fill the viewport between nav and footer */
+    .error-page {
+      min-height: calc(100vh - 85px - 200px); /* subtract nav + footer heights */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(180deg, #f8f9fa 0%, #e9f2f8 100%);
+      overflow: hidden;
+    }
+
+    /* Canvas sits behind content but doesn't interfere with layout */
+    #bubbleCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .error-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .error-code {
+      font-family: "Raleway", sans-serif;
+      font-weight: 900;
+      font-size: clamp(7rem, 16vw, 13rem);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--bars);
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 12px rgba(0, 64, 128, 0.2);
+    }
+
+    .error-subtitle {
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      letter-spacing: 0.06em;
+      color: var(--dark-blue);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      max-width: 480px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .error-message .lead {
+      color: #666;
+    }
+
+    .btn-return {
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background-color: var(--bars);
+      border: 2px solid var(--bars);
+      color: white;
+      padding: 13px 34px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 3px 12px rgba(0, 64, 128, 0.25);
+    }
+
+    .btn-return:hover {
+      background-color: var(--hover-color);
+      border-color: var(--hover-color);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 64, 128, 0.35);
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-return:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 64, 128, 0.2);
+    }
+
+    .bubble-hint {
+      font-family: "Raleway", sans-serif;
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #999;
+      margin-top: 1.5rem;
+    }
+
+    .bubble-hint i {
+      font-size: 0.9rem;
+      margin-right: 4px;
+    }
+
+    @media (max-width: 767px) {
+      .error-page {
+        min-height: calc(100vh - 70px - 150px);
+      }
+      .error-content {
+        padding: 2rem 1.5rem;
+      }
+      .btn-return {
+        padding: 11px 28px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR (identical to base.html) ===== -->
+  <nav id="mainNav" class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename='img/SunkWTlogo.svg') }}" alt="Sunk Robotics Logo" height="100">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="color:white;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item h4 spacer"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item dropdown h4 spacer">
+            <a class="nav-link dropdown-toggle" href="/#robots" id="robotsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Robots
+            </a>
+            <ul class="dropdown-menu mt-2 shadow rounded border-0" aria-labelledby="robotsDropdown">
+              <li><a class="dropdown-item" href="/bob">BOB ROV</a></li>
+              <li><a class="dropdown-item" href="/jona">JONA ROV</a></li>
+              <li><a class="dropdown-item" href="/jena">JENA FLOAT</a></li>
+            </ul>
+          </li>
+          <li class="nav-item h4 spacer"><a class="nav-link" href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== 404 ERROR CONTENT ===== -->
+  <main>
+    <div class="error-page">
+      <canvas id="bubbleCanvas"></canvas>
+      <div class="error-content">
+        <h1 class="error-code">404</h1>
+        <p class="error-subtitle">Lost at Sea</p>
+        <p class="error-message">
+          <span class="lead">This page has drifted into deep water.</span><br>
+          Our ROVs searched everywhere, but couldn't find it.
+        </p>
+        <a href="/" class="btn-return">
+          <i class="bi bi-house-door-fill"></i> Return to Home
+        </a>
+        <p class="bubble-hint">
+          <i class="bi bi-mouse2"></i> move your mouse around
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (identical to base.html) ===== -->
+  <footer class="footer-boat">
+    <a class="footer-sunk" href="/">
+      <img src="{{ url_for('static', filename='img/SunkWTlogo.svg') }}" alt="Sunk Robotics Logo">
+    </a>
+    <div class="footer-content text-center">
+      <div class="container">
+        <p>&copy; 2025 Sunk Robotics. All rights reserved.</p>
+        <p class="ad"><a href="https://www.mileshilliard.com/">www.mileshilliard.com</a></p>
+        <div class="social-icons d-flex justify-content-center gap-3 mt-2">
+          <a href="https://instagram.com/sunkrobotics" target="_blank" class="text-white fs-3">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://github.com/sunk-robotics" target="_blank" class="text-white fs-3">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/sunk-robotics/" target="_blank" class="text-white fs-3">
+            <i class="bi bi-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Navbar scroll script (identical to base.html) -->
+  <script>
+    window.addEventListener("scroll", function () {
+      setTimeout(manage_scroll, 50);
+    });
+
+    function manage_scroll() {
+      const nav = document.getElementById("mainNav");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
+    }
+
+    // ===== BUBBLE ANIMATION (lightweight, ocean-themed) =====
+    (function() {
+      const canvas = document.getElementById('bubbleCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      let width, height;
+      let bubbles = [];
+      let mouseX = -100;
+      let mouseY = -100;
+      let targetMouseX = -100;
+      let targetMouseY = -100;
+
+      // Ocean palette matching Sunk Robotics
+      const oceanColors = [
+        { r: 0, g: 119, b: 190 },  // ocean-blue
+        { r: 0, g: 95, b: 141 },   // dark-blue
+        { r: 166, g: 220, b: 239 }, // light-blue
+        { r: 0, g: 188, b: 212 },  // accent
+        { r: 0, g: 64, b: 128 },   // bars
+      ];
+
+      const BUBBLE_COUNT = 60;
+
+      function resizeCanvas() {
+        const errorPage = document.querySelector('.error-page');
+        if (!errorPage) return;
+        width = errorPage.offsetWidth;
+        height = errorPage.offsetHeight;
+        canvas.width = width;
+        canvas.height = height;
+        initBubbles();
+      }
+
+      function getRandomColor() {
+        const c = oceanColors[Math.floor(Math.random() * oceanColors.length)];
+        return c;
+      }
+
+      function initBubbles() {
+        bubbles = [];
+        for (let i = 0; i < BUBBLE_COUNT; i++) {
+          const color = getRandomColor();
+          bubbles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            baseRadius: Math.random() * 14 + 4,
+            radius: Math.random() * 14 + 4,
+            speedY: Math.random() * 0.35 + 0.1,
+            speedX: (Math.random() - 0.5) * 0.2,
+            wobbleAmp: Math.random() * 0.3 + 0.1,
+            wobbleSpeed: Math.random() * 0.015 + 0.005,
+            phase: Math.random() * Math.PI * 2,
+            opacity: Math.random() * 0.2 + 0.08,
+            color: color,
+          });
+        }
+      }
+
+      function updateBubbles() {
+        mouseX += (targetMouseX - mouseX) * 0.05;
+        mouseY += (targetMouseY - mouseY) * 0.05;
+
+        const time = Date.now() * 0.001;
+
+        for (let b of bubbles) {
+          b.y -= b.speedY;
+          b.x += b.speedX + Math.sin(time * b.wobbleSpeed + b.phase) * b.wobbleAmp;
+
+          // Mouse interaction
+          const dx = mouseX - b.x;
+          const dy = mouseY - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const maxDist = 160;
+
+          if (dist < maxDist && mouseX > 0 && mouseY > 0) {
+            const force = (1 - dist / maxDist);
+            b.x += dx * force * 0.03;
+            b.y += dy * force * 0.03;
+            b.radius = b.baseRadius * (1 + force * 0.4);
+          } else {
+            b.radius += (b.baseRadius - b.radius) * 0.04;
+          }
+
+          b.radius = Math.max(2, Math.min(b.baseRadius * 1.8, b.radius));
+
+          // Wrap
+          if (b.y < -b.radius * 3) {
+            b.y = height + b.radius * 2;
+            b.x = Math.random() * width;
+          }
+          if (b.x < -b.radius * 2) b.x = width + b.radius;
+          if (b.x > width + b.radius * 2) b.x = -b.radius;
+        }
+      }
+
+      function drawBubbles() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let b of bubbles) {
+          const { r, g, b: blue } = b.color;
+
+          // Soft glow
+          const glowRad = b.radius * 2;
+          const glow = ctx.createRadialGradient(b.x, b.y, b.radius * 0.2, b.x, b.y, glowRad);
+          glow.addColorStop(0, `rgba(${r},${g},${blue},${b.opacity * 0.5})`);
+          glow.addColorStop(1, `rgba(${r},${g},${blue},0)`);
+
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, glowRad, 0, Math.PI * 2);
+          ctx.fillStyle = glow;
+          ctx.fill();
+
+          // Body
+          const body = ctx.createRadialGradient(
+            b.x - b.radius * 0.25, b.y - b.radius * 0.3, b.radius * 0.05,
+            b.x, b.y, b.radius
+          );
+          body.addColorStop(0, `rgba(255,255,255,${b.opacity * 0.5})`);
+          body.addColorStop(0.4, `rgba(${r},${g},${blue},${b.opacity * 0.35})`);
+          body.addColorStop(1, `rgba(${r},${g},${blue},0)`);
+
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+          ctx.fillStyle = body;
+          ctx.fill();
+
+          // Shine
+          const shine = ctx.createRadialGradient(
+            b.x - b.radius * 0.3, b.y - b.radius * 0.35, 0,
+            b.x - b.radius * 0.1, b.y - b.radius * 0.15, b.radius * 0.35
+          );
+          shine.addColorStop(0, 'rgba(255,255,255,0.55)');
+          shine.addColorStop(1, 'rgba(255,255,255,0)');
+
+          ctx.beginPath();
+          ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+          ctx.fillStyle = shine;
+          ctx.fill();
+        }
+      }
+
+      function animate() {
+        updateBubbles();
+        drawBubbles();
+        requestAnimationFrame(animate);
+      }
+
+      // Events
+      window.addEventListener('resize', resizeCanvas);
+
+      const errorPage = document.querySelector('.error-page');
+      if (errorPage) {
+        errorPage.addEventListener('mousemove', (e) => {
+          const rect = errorPage.getBoundingClientRect();
+          targetMouseX = e.clientX - rect.left;
+          targetMouseY = e.clientY - rect.top;
+        });
+
+        errorPage.addEventListener('mouseleave', () => {
+          targetMouseX = -200;
+          targetMouseY = -200;
+        });
+
+        errorPage.addEventListener('mouseenter', (e) => {
+          const rect = errorPage.getBoundingClientRect();
+          targetMouseX = e.clientX - rect.left;
+          targetMouseY = e.clientY - rect.top;
+        });
+
+        // Touch
+        errorPage.addEventListener('touchmove', (e) => {
+          if (e.touches.length > 0) {
+            const rect = errorPage.getBoundingClientRect();
+            targetMouseX = e.touches[0].clientX - rect.left;
+            targetMouseY = e.touches[0].clientY - rect.top;
+          }
+        }, { passive: true });
+
+        errorPage.addEventListener('touchend', () => {
+          targetMouseX = -200;
+          targetMouseY = -200;
+        });
+      }
+
+      resizeCanvas();
+      animate();
+    })();
+  </script>
+</body>
+</html>
