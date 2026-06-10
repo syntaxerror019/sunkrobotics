@@ -106,7 +106,7 @@ h3 {
   transition: all 0.3s ease;
 }
 #mainNav img {
-  height: 80px;
+  height: 70px;
   transition: height 0.3s ease;
 }
 /* When scroled */
@@ -308,7 +308,7 @@ li {
     transform: translateX(-50%);
   }
   #mainNav img {
-      height: 70px;
+      max-height: 30px !important;
   }
 }
 
